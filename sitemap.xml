@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://mydomain.org/mysite/</loc>
+         <loc>https://auzfox.github.io/ERA-3D-Docs/</loc>
          <lastmod>2024-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/api-reference/</loc>
+         <loc>https://auzfox.github.io/ERA-3D-Docs/api-reference/</loc>
          <lastmod>2024-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/building/</loc>
+         <loc>https://auzfox.github.io/ERA-3D-Docs/building/</loc>
          <lastmod>2024-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/configuration/</loc>
+         <loc>https://auzfox.github.io/ERA-3D-Docs/configuration/</loc>
          <lastmod>2024-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/editors/</loc>
+         <loc>https://auzfox.github.io/ERA-3D-Docs/editors/</loc>
          <lastmod>2024-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/era-c-overview/</loc>
+         <loc>https://auzfox.github.io/ERA-3D-Docs/era-c-overview/</loc>
          <lastmod>2024-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mydomain.org/mysite/memory-map/</loc>
+         <loc>https://auzfox.github.io/ERA-3D-Docs/memory-map/</loc>
          <lastmod>2024-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
