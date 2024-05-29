@@ -1,0 +1,2230 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/era-c-overview/">
+      
+      
+        <link rel="prev" href="../editors/">
+      
+      
+        <link rel="next" href="../api-reference/">
+      
+      
+      <link rel="icon" href="../assets/logo_3d_small.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>ERA-C Overview - ERA-3D Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ERA-3D Docs" class="md-header__button md-logo" aria-label="ERA-3D Docs" data-md-component="logo">
+      
+  <img src="../assets/logo_3d_big.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ERA-3D Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ERA-C Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AuzFox/ERA-3D" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AuzFox/ERA-3D
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../building/" class="md-tabs__link">
+        
+  
+    
+  
+  Building
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../editors/" class="md-tabs__link">
+        
+  
+    
+  
+  Editors
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  ERA-C Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api-reference/" class="md-tabs__link">
+        
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../memory-map/" class="md-tabs__link">
+        
+  
+    
+  
+  Memory Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../configuration/" class="md-tabs__link">
+        
+  
+    
+  
+  Configuration
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ERA-3D Docs" class="md-nav__button md-logo" aria-label="ERA-3D Docs" data-md-component="logo">
+      
+  <img src="../assets/logo_3d_big.png" alt="logo">
+
+    </a>
+    ERA-3D Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AuzFox/ERA-3D" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AuzFox/ERA-3D
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Editors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ERA-C Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ERA-C Overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primitive Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primitive Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#int" class="md-nav__link">
+    <span class="md-ellipsis">
+      int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#float" class="md-nav__link">
+    <span class="md-ellipsis">
+      float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      vec2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vec3" class="md-nav__link">
+    <span class="md-ellipsis">
+      vec3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      string
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Pointers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-casting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type Casting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vararg-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vararg Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hook-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hook Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hook Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    <span class="md-ellipsis">
+      init
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw" class="md-nav__link">
+    <span class="md-ellipsis">
+      draw
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in Constants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in Structs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Structs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    <span class="md-ellipsis">
+      vertex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cam2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      cam2d
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cam3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      cam3d
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light" class="md-nav__link">
+    <span class="md-ellipsis">
+      light
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collision-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collision Objects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collision Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      colpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colaabb" class="md-nav__link">
+    <span class="md-ellipsis">
+      colaabb
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colsphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      colsphere
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colcylinder" class="md-nav__link">
+    <span class="md-ellipsis">
+      colcylinder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coltriangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      coltriangle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differences-from-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Differences From C
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>ERA-C Overview</h1>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page assumes you are already familiar with basic programming concepts and data types.</p>
+</div>
+<p>ERA-3D games are programmed in a scripting language called ERA-C. ERA-C is similar to C in many ways, but has a few key differences that are worth noting.</p>
+<p>If you are already familiar with C, see the <a href="#differences-from-c">Differences From C</a> section.</p>
+<h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
+<p>Comments in ERA-C follow the same syntax as C/C++.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// single-line comment</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"> </span><span class="c1">// another comment</span>
+<span class="cm">/*</span>
+<span class="cm">multi</span>
+<span class="cm">line</span>
+<span class="cm">comment</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<p>Multi-line comments can be nested.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm">  this is a comment</span>
+<span class="cm">  /*</span>
+<span class="cm">    this is a nested comment</span>
+<span class="cm">  */</span>
+<span class="w">  </span><span class="n">this</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">still</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">comment</span>
+<span class="o">*/</span>
+</code></pre></div>
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>Both local and global variables are declared using the pattern <code>&lt;data type&gt; &lt;name&gt; ;</code>.</p>
+<p>Variable names must start with a letter and can contain the characters <code>a-z, A-Z, 0-9, _</code></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">my_int</span><span class="p">;</span><span class="w"> </span><span class="c1">// an int variable</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">my_float</span><span class="p">;</span><span class="w"> </span><span class="c1">// a float variable</span>
+</code></pre></div>
+<p>Local variables (variables declared inside a function or loop scope) can be assigned a value when they are declared.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+</code></pre></div>
+<p>Global variables must be initialized inside of a function.</p>
+<p>The <code>init()</code> function is a good place for that. (See the <a href="#hook-functions">Hook Functions</a> section)</p>
+<h2 id="primitive-types">Primitive Types<a class="headerlink" href="#primitive-types" title="Permanent link">&para;</a></h2>
+<p>Primitive types are data types built into the ERA-C compiler.</p>
+<h3 id="int"><code>int</code><a class="headerlink" href="#int" title="Permanent link">&para;</a></h3>
+<p><code>int</code> is a data type that is capable of storing positive and negative whole numbers.</p>
+<p>Specifically, they are 32-bit integers. Most operations treat them as signed integers, but some operators treat <code>int</code> values as unsigned.</p>
+<p>Integer literal values can be given in decimal form, but they can also be represented in hexadecimal and binary form using the <code>0x</code> and <code>0b</code> prefixes.</p>
+<p>Unlike C, leading zeros do not mean a number is in octal format.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="p">;</span><span class="w"> </span><span class="c1">// positive value</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-24</span><span class="p">;</span><span class="w"> </span><span class="c1">// negative value</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">hex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">;</span><span class="w"> </span><span class="c1">// hexadecimal value (255)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">binary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b10101010</span><span class="p">;</span><span class="w"> </span><span class="c1">// binary value (170)</span>
+
+<span class="c1">// To make large numbers easier to read, underscores can be inserted between digits.</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">big_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="n">_345_678</span><span class="p">;</span>
+
+<span class="c1">// Character literals are also supported, and are interpreted as int values.</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">letter_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;E&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p><code>int</code>s support various arithmetic operations, as well as bitwise and logical ones.</p>
+<p><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>%</code> are the addition, subtraction, multiplication, division, and modulus operators. They follow the same precedence rules as C.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Dividing <code>int</code> values does not result in a fractional value, the fractional component is discarded instead.</p>
+<p><code>5 / 2</code> returns 2, not 2.5.</p>
+</div>
+<p>ERA-C also supports bitwise operations for integers.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="mb">0b00001111</span><span class="p">;</span><span class="w"> </span><span class="c1">// bitwise NOT: a = 0b11110000</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b10101010</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mb">0b01010101</span><span class="p">;</span><span class="w"> </span><span class="c1">// bitwise OR: b = 0b11111111</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b10101111</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mb">0b00111100</span><span class="p">;</span><span class="w"> </span><span class="c1">// bitwise AND: c = 0b00101100</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b11001100</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mb">0b10101010</span><span class="p">;</span><span class="w"> </span><span class="c1">// bitwise XOR: d = 0b01100110</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b00001111</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// bitwise left shift: e = 0b00111100</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b11110000</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// bitwise right shift (logical): f = 0b00001111</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b10000000</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// bitwise right shift (arithmetic): f = 0b11111000</span>
+</code></pre></div>
+<p>The logical and comparison operators return an integer value, so their result can be stored in an <code>int</code>.</p>
+<p>If the comparison is true, a value of 1 is returned. Otherwise, 0 is returned.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// a = 1 (true)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// b = 0 (false)</span>
+</code></pre></div>
+<h3 id="float"><code>float</code><a class="headerlink" href="#float" title="Permanent link">&para;</a></h3>
+<p><code>float</code>s are 32-bit floating point values, meaning they are numbers with a fractional component.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">my_float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span>
+</code></pre></div>
+<p><code>floats</code> support the <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>%</code> operators, as well as the comparison operators.</p>
+<h3 id="vec2"><code>vec2</code><a class="headerlink" href="#vec2" title="Permanent link">&para;</a></h3>
+<p><code>vec2</code> represents a 2D vector with <code>x</code> and <code>y</code> components.</p>
+<p><code>x</code> and <code>y</code> both have the <code>float</code> data type.</p>
+<div class="highlight"><pre><span></span><code><span class="n">vec2</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2D vector with the value (x=1.0, y=2.0)</span>
+
+<span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// assigning a new x value</span>
+<span class="n">v</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.25</span><span class="p">;</span><span class="w"> </span><span class="c1">// assigning a new y value</span>
+</code></pre></div>
+<p>The following table lists special functions used to construct <code>vec2</code>s with common values:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th><code>vec2</code> Return Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vec2Zero()</code></td>
+<td><code>{0.0, 0.0}</code> (equivalent to <code>vec2()</code> with no arguments)</td>
+</tr>
+<tr>
+<td><code>vec2One()</code></td>
+<td><code>{1.0, 1.0}</code></td>
+</tr>
+<tr>
+<td><code>vec2Up()</code></td>
+<td><code>{0.0, -1.0}</code></td>
+</tr>
+<tr>
+<td><code>vec2Down()</code></td>
+<td><code>{0.0, 1.0}</code></td>
+</tr>
+<tr>
+<td><code>vec2Left()</code></td>
+<td><code>{-1.0, 0.0}</code></td>
+</tr>
+<tr>
+<td><code>vec2Right()</code></td>
+<td><code>{1.0, 0.0}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="vec3"><code>vec3</code><a class="headerlink" href="#vec3" title="Permanent link">&para;</a></h3>
+<p><code>vec3</code> represents a 3D vector with <code>x</code>, <code>y</code>, and <code>z</code> components.</p>
+<p><code>x</code>, <code>y</code>, and <code>z</code> all have the <code>float</code> data type.</p>
+<div class="highlight"><pre><span></span><code><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3D vector with the value (x=1.0, y=2.0, z=3.0)</span>
+
+<span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.5</span><span class="p">;</span><span class="w"> </span><span class="c1">// assigning a new x value</span>
+<span class="n">v</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.75</span><span class="p">;</span><span class="w"> </span><span class="c1">// assigning a new y value</span>
+<span class="n">v</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.9</span><span class="p">;</span><span class="w"> </span><span class="c1">// assigning a new z value</span>
+</code></pre></div>
+<p>The following table lists special functions used to construct <code>vec3</code>s with common values:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th><code>vec3</code> Return Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vec3Zero()</code></td>
+<td><code>{0.0, 0.0, 0.0}</code> (equivalent to <code>vec3()</code> with no arguments)</td>
+</tr>
+<tr>
+<td><code>vec3One()</code></td>
+<td><code>{1.0, 1.0, 1.0}</code></td>
+</tr>
+<tr>
+<td><code>vec3Up()</code></td>
+<td><code>{0.0, 1.0, 0.0}</code></td>
+</tr>
+<tr>
+<td><code>vec3Down()</code></td>
+<td><code>{0.0, -1.0, 0.0}</code></td>
+</tr>
+<tr>
+<td><code>vec3Left()</code></td>
+<td><code>{-1.0, 0.0, 0.0}</code></td>
+</tr>
+<tr>
+<td><code>vec3Right()</code></td>
+<td><code>{1.0, 0.0, 0.0}</code></td>
+</tr>
+<tr>
+<td><code>vec3Forward()</code></td>
+<td><code>{0.0, 0.0, -1.0}</code></td>
+</tr>
+<tr>
+<td><code>vec3Back()</code></td>
+<td><code>{0.0, 0.0, 1.0}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Both <code>vec2</code> and <code>vec3</code> support addition, subtraction, multiplication, and division.</p>
+<p>Vector types cannot be mixed in vector arithmetic, only vectors of the same dimensions can be added, subtracted, etc.</p>
+<p>During a arithmetic operation, the individual members of the vector are operated on. For example, when adding two <code>vec2</code> values, the result will be <code>vec2(a.x + b.x, a.y + b.y)</code>. The same pattern applies to all arithmetic operators.</p>
+<div class="highlight"><pre><span></span><code><span class="n">vec2</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec2</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vec2</span><span class="p">(</span><span class="mf">3.3</span><span class="p">,</span><span class="w"> </span><span class="mf">4.4</span><span class="p">);</span><span class="w"> </span><span class="c1">// v2 = vec2(4.4, 6.6)</span>
+<span class="n">vec3</span><span class="w"> </span><span class="n">v3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec3</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vec3</span><span class="p">(</span><span class="mf">4.4</span><span class="p">,</span><span class="w"> </span><span class="mf">5.5</span><span class="p">,</span><span class="w"> </span><span class="mf">6.6</span><span class="p">);</span><span class="w"> </span><span class="c1">// v3 = vec3(5.5, 7.7, 9.9)</span>
+</code></pre></div>
+<p>Vectors can also be multiplied and divided by <code>int</code> and <code>float</code> values. This will return a vector with each member having been multiplied/divided by the <code>int</code>/<code>float</code> value.</p>
+<div class="highlight"><pre><span></span><code><span class="n">vec3</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec3</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.3</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// a = vec3(2.2, 4.4, 6.6)</span>
+<span class="n">vec2</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec2</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span><span class="w"> </span><span class="c1">// b = vec2(2.0, 4.0)</span>
+</code></pre></div>
+<p>Vectors support all comparison operators, and can only be compared with their same type.</p>
+<p>Comparing vectors compares each member pair, and the comparison is only true if all pairs satisfy the comparison.</p>
+<div class="highlight"><pre><span></span><code><span class="n">vec2</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec2</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">20.0</span><span class="p">);</span>
+<span class="n">vec2</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">// result = 1 (true), as a.x &lt; b.x and a.y &lt; b.y</span>
+</code></pre></div>
+<h3 id="string"><code>string</code><a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p>The <code>string</code> data type is used to hold text.</p>
+<p><code>string</code> literals must be enclosed within double-quotes (<code>"</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello world!&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>To fetch a character from the string, or to change a character, use the following expression: <code>&lt;variable&gt; [ &lt;index&gt; ];</code>.</p>
+<p>The characters of a string are zero-indexed, meaning that the first character is stored at index 0.</p>
+<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello world!&quot;</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">character</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="c1">// fetch a character</span>
+</code></pre></div>
+<p>Internally, <code>string</code> is a struct (see the <a href="#structs">Structs</a> section) that looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Strings support the <code>==</code> and <code>!=</code> operators. Two strings are considered equal if the following conditions are met:</p>
+<ol>
+<li>both strings are the same length</li>
+<li>both strings point to the same address or the characters in both strings match</li>
+</ol>
+<h3 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h3>
+<p>Arrays are essentially blocks of memory used to store a list of elements all of a particular data type. For example, you might have an array containing 10 <code>int</code> values, or an array containing 5 <code>vec2</code> values.</p>
+<p>Arrays are fixed in size, once they are declared the cannot be resized.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">my_array</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// declare an array of 10 ints</span>
+</code></pre></div>
+<p>Access array elements using the pattern <code>&lt;array variable&gt; [ &lt;index&gt; ]</code>, where <code>&lt;index&gt;</code> is an integer value.</p>
+<p>Array values are zero-indexed; meaning the first element in the array is stored at index 0, the second at index 1, and so on.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">my_array</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="c1">// get the first value stored in the array</span>
+<span class="n">my_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"> </span><span class="c1">// store a new value in the array at index 1</span>
+</code></pre></div>
+<h3 id="pointers">Pointers<a class="headerlink" href="#pointers" title="Permanent link">&para;</a></h3>
+<p>ERA-C supports pointers, which behave similarly to pointers in C. To declare a pointer to a type, put a <code>*</code> after the data type.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">int_pointer</span><span class="p">;</span><span class="w"> </span><span class="c1">// pointer to an int</span>
+</code></pre></div>
+<p>To obtain the memory address of a variable, use the address-of operator. (<code>&amp;</code>)</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// normal int variable</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// ptr now contains the memory address of x </span>
+</code></pre></div>
+<p>The unary dereference operator (<code>*</code>) can be used to fetch the value pointed to by a pointer.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// y now contains the same value as x</span>
+</code></pre></div>
+<p>Like arrays, pointers can be used to access multiple contiguous values stored next to each other in memory.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// in this example, p points to memory address 0, which corresponds to general-purpose memory.</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="c1">// get the first value stored at the address p points to</span>
+<span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// store a new value at the address p points to plus an offset of 1 int. (which would be the address 4. 1 int = 4 bytes)</span>
+</code></pre></div>
+<p>A pointer with the type <code>void*</code> is a special type of pointer that can point to any data type. Pointers of this type are called "void pointers".</p>
+<p>Void pointers cannot be dereferenced, they are only used as a container for arbitrary memory addresses.</p>
+<p>Any pointer type and be assigned the value of a void pointer, and vice versa.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">32.2</span><span class="p">;</span>
+<span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">// p points to i</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// ERROR: cannot dereference void pointers!</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">f</span><span class="p">;</span><span class="w"> </span><span class="c1">// p now points to f</span>
+</code></pre></div>
+<p>Pointers can be assigned arbitrary integer values, and thus arbitrary memory addresses.</p>
+<p>In C, this is dangerous and discouraged most of the time, but in ERA-C it is needed to access specific parts of memory.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00800000</span><span class="p">;</span><span class="w"> </span><span class="c1">// p now points to address 0x00800000, which is the beginning of the system&#39;s texture memory</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pointers in ERA-C must be aligned when dereferencing them, meaning the address they contain must be a multiple of the size of the type they point to (or address 0). If a pointer is misaligned when it is dereferenced, en error will be raised and the program will halt.</p>
+</div>
+<p>Pointers can be added to or subtracted from, changing the address they point to. This is referred to as "pointer arithmetic".</p>
+<p>Adding a value of 1 to a pointer will increase its address by the size of the data type it points to.</p>
+<p>For example, adding 1 to a <code>int*</code> will increase its address by 4, since <code>int</code>s are 4 bytes in size.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Void pointers do not support pointer arithmetic.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// p now points to the next int in memory</span>
+</code></pre></div>
+<p>The <code>sizeof()</code> operator will return the size of a given type in bytes.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"> </span><span class="c1">// size = 4</span>
+</code></pre></div>
+<p><code>null</code> is a special constant that represents an invalid memory address. Unlike C's <code>NULL</code>, it is not equal to the integer value 0.</p>
+<p>Assign a pointer to <code>null</code> to signify that it does not currently point to a valid address.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">null</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="structs">Structs<a class="headerlink" href="#structs" title="Permanent link">&para;</a></h3>
+<p>Structs are compound data types that are made up of other smaller types. They are useful for representing complex objects with many attributes.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">MyStruct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>In the above example, the struct <code>MyStruct</code> is declared, and contains an <code>int</code> and <code>float</code> members.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Structs must be declared outside of any function, and before they are used as a variable type.</p>
+</div>
+<p>To create a struct instance variable, use the struct name as the variable type.</p>
+<div class="highlight"><pre><span></span><code><span class="n">MyStruct</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+</code></pre></div>
+<p>Struct instances can be created using the pattern <code>&lt;struct name&gt; ( &lt;member values...&gt; )</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">Mystruct</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mystruct</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// create a MyStruct instance with the value (a=1, b=2.5, c=3)</span>
+</code></pre></div>
+<p>C-style struct initializers are also allowed.</p>
+<p>These use the pattern <code>( &lt;struct name&gt; ) { &lt;member values...&gt; }</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">Mystruct</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Mystruct</span><span class="p">){</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"> </span><span class="c1">// create a MyStruct instance with the value (a=1, b=2.5, c=3)</span>
+</code></pre></div>
+<p>If a struct initializer's member value list is left empty, all struct members will be initialized to zero.</p>
+<div class="highlight"><pre><span></span><code><span class="n">MyStruct</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyStruct</span><span class="p">();</span><span class="w"> </span><span class="c1">// instance = (0, 0.0, 0)</span>
+<span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec3</span><span class="p">();</span><span class="w"> </span><span class="c1">// v = (0.0, 0.0, 0.0)</span>
+</code></pre></div>
+<p>To access struct members, use the dot operator. (<code>.</code>)</p>
+<div class="highlight"><pre><span></span><code><span class="n">Mystruct</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyStruct</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">instance</span><span class="p">.</span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// x now contains 1</span>
+<span class="n">instance</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.1</span><span class="p">;</span><span class="w"> </span><span class="c1">// set the b member of instance to a new value</span>
+</code></pre></div>
+<p>When accessing a struct using a pointer, the arrow operator (<code>-&gt;</code>) must be used instead of the dot operator.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Mystruct</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyStruct</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="n">MyInstance</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">instance</span><span class="p">;</span><span class="w"> </span><span class="c1">// p points to instance</span>
+<span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span><span class="w"> </span><span class="c1">// access the a member of instance using the pointer p</span>
+</code></pre></div>
+<h3 id="function-pointers">Function Pointers<a class="headerlink" href="#function-pointers" title="Permanent link">&para;</a></h3>
+<p>Function pointers are special pointers that point to code, rather than data.</p>
+<p>To declare a function pointer, use the pattern <code>&lt;return type&gt; ( &lt;argument types...&gt; ) &lt;variable name&gt; ;</code></p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="n">func_ptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// func_ptr points to a function that accepts an `int` and `float` argument and does not return a value.</span>
+</code></pre></div>
+<p>Assign a function pointer by using the name of the function to point to.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// ... function code here ...</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="n">func_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_function</span><span class="p">;</span>
+</code></pre></div>
+<p>Function pointers do not support pointer arithmetic, and can only be cast to <code>void*</code>.</p>
+<p>Function pointers can be assigned <code>null</code>.</p>
+<h2 id="type-casting">Type Casting<a class="headerlink" href="#type-casting" title="Permanent link">&para;</a></h2>
+<p>Type casting in ERA-C works much like C. To cast an expression to another type, use the pattern <code>( &lt;type&gt; ) &lt;expression&gt;</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">f</span><span class="p">;</span><span class="w"> </span><span class="c1">// cast the float value of f to an int</span>
+</code></pre></div>
+<p><code>float</code> to <code>int</code> casting discards the fractional component of the <code>float</code>. (The value is truncated)</p>
+<p>In the above example, <code>i</code> would have the value 2 after the cast.</p>
+<p>The following table lists all accepted casts:</p>
+<table>
+<thead>
+<tr>
+<th>Original Type</th>
+<th>Target Type</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td><code>float</code></td>
+<td><code>float</code> equal to the original integer value.</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>Non-function pointer</td>
+<td>Pointer with address equal to the original integer value.</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>int</code></td>
+<td><code>int</code> containing the truncated integer value of the <code>float</code>.</td>
+</tr>
+<tr>
+<td>Non-function pointer</td>
+<td><code>int</code></td>
+<td><code>int</code> containing the address of the original pointer value.</td>
+</tr>
+<tr>
+<td>Function pointer</td>
+<td><code>void*</code></td>
+<td><code>void*</code> containing the address of the original function pointer value.</td>
+</tr>
+<tr>
+<td><code>void*</code></td>
+<td>Function pointer</td>
+<td>Function pointer containing the address of the original void pointer value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h2>
+<p>Enums are lists of compile-time constants used to represent numerical values.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// declaring an enum</span>
+<span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">VALUE_A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// enum entries can be assigned direct values</span>
+<span class="w">  </span><span class="n">VALUE_B</span><span class="p">,</span><span class="w"> </span><span class="c1">// when no value is given, an entry is assigned a value that is 1 higher than the previous entry</span>
+<span class="w">  </span><span class="n">VALUE_C</span>
+<span class="p">};</span>
+
+<span class="c1">// using the enum entries</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VALUE_C</span><span class="p">;</span><span class="w"> </span><span class="c1">// x = 2</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Enums must be declared outside of any function, and before their members are used in an expression.</p>
+</div>
+<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
+<p>ERA-C has the following operators:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Addition</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplication</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Division</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulus</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>Logical Not (Unary)</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>Logical And</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>Logical Or</td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td>Equal-to Comparision</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Not-Equal-to Comparision</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less-Than Comparision</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater-Than Comparision</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less-Than-or-Equal-to Comparision</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater-Than-or-Equal-to Comparision</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>Bitwise NOT (Unary)</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>Bitwise OR</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Bitwise XOR</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>Bitwise Left Shift</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>Bitwise Logical Right Shift</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;&gt;</code></td>
+<td>Bitwise Arithmetic Right Shift</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Struct Member Access</td>
+</tr>
+<tr>
+<td><code>-&gt;</code></td>
+<td>Struct Member Access (Pointer)</td>
+</tr>
+<tr>
+<td><code>sizeof()</code></td>
+<td>Type Size (in bytes)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h2>
+<p><code>if</code> statements work just like in C.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// do something...</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// do something else...</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// no previous conditions were true</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>int</code> values can be used as conditions. A value of 0 is <code>false</code>, all non-zero values are <code>true</code>.</p>
+<p>Pointers and function pointers can be used as the <code>if</code> statement condition to check if they point to valid addresses.</p>
+<div class="highlight"><pre><span></span><code>void* p = null;
+
+if (p) {
+  // p points to a valid address
+}
+else {
+  // p is not valid
+}
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The expression <code>my_pointer == null</code> will only be true if <code>my_pointer</code> contains exactly the value <code>null</code>.</p>
+</div>
+<h2 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">&para;</a></h2>
+<p>ERA-C supports <code>for</code> and <code>while</code> loops with the same syntax as C.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// do something...</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// do something...</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The <code>break</code> keyword will end the current loop immediately.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// exit the loop body</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// do something with i...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>continue</code> keyword will skip to the next loop iteration.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="c1">// the rest of the loop body is skipped, and the loop starts again after incrementing i</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// do something with i...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<p>Functions in ERA-C follow mostly the same syntax as C.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// declaring a function</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// do something...</span>
+<span class="p">}</span>
+
+<span class="c1">// calling the function</span>
+<span class="n">my_function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+</code></pre></div>
+<p>The <code>return</code> keyword returns a value from a function.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Unlike C, a function that lists no arguments is a function that accepts no arguments.</p>
+<p>The C style <code>void my_function(void)</code> will not compile in ERA-C.</p>
+</div>
+<h3 id="vararg-functions">Vararg Functions<a class="headerlink" href="#vararg-functions" title="Permanent link">&para;</a></h3>
+<p>Functions that accept a variable number of arguments are called "vararg" or "variadic" functions.</p>
+<p>The special vararg type (<code>...</code>) is used to indicate that a function is variadic.</p>
+<p>The vararg type must come after all other non-optional arguments.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// declaring a variadic function</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// do something...</span>
+<span class="p">}</span>
+
+<span class="c1">// calling the function</span>
+<span class="n">my_function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+</code></pre></div>
+<p>To access vararg arguments, use the <code>vargc()</code> and <code>vargv()</code> API functions.</p>
+<p><code>vargc()</code> takes no arguments and returns the remaining number of bytes available in the varargs list.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vargc</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// there are at least 4 bytes of vararg data left.</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>vargv()</code> returns a <code>void*</code> pointing to the current vararg argument, and accepts a size in bytes as an argument.</p>
+<p>The size given to <code>vargv()</code> is the offset to give the vararg pointer in order to move past the current argument.</p>
+<p>It is recommended to use <code>sizeof()</code> to get argument size.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">vargc</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">arg_pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">vargv</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">*</span><span class="n">arg_pointer</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// calling sum()</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// value = 15</span>
+</code></pre></div>
+<p>The above snippet is an example of a simple sum function that adds a variable number of integers.</p>
+<h2 id="hook-functions">Hook Functions<a class="headerlink" href="#hook-functions" title="Permanent link">&para;</a></h2>
+<p>ERA-3D recognizes special "hook" functions declared in a ERA-C program and will call them at certain times.</p>
+<p>At least one hook function must be declared in order for a cart to run.</p>
+<h3 id="init"><code>init</code><a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
+<p>if a function is declared with the signature <code>void init()</code>, it will be called once when a cart is ran.</p>
+<p>Use this function to initialize game state.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// initialize state here...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="update"><code>update</code><a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
+<p>if a function is declared with the signature <code>void update(float delta_time)</code>, it will be called once every frame.</p>
+<p>Use this function to update game state. (check inputs, move objects, etc.)</p>
+<p><code>delta_time</code> will be passed to the function automatically, and will contain the amount of time (in seconds) since the last frame.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">delta_time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// update state here...</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The <code>delta_time</code> argument for <code>update()</code> can be given any other name, but it must be a <code>float</code>.</p>
+</div>
+<h3 id="draw"><code>draw</code><a class="headerlink" href="#draw" title="Permanent link">&para;</a></h3>
+<p>if a function is declared with the signature <code>void draw()</code>, it will be called once every frame after the call to <code>update()</code>.</p>
+<p>Use this function to configure rendering settings and to render graphics to the screen.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// render graphics here...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="built-in-constants">Built-in Constants<a class="headerlink" href="#built-in-constants" title="Permanent link">&para;</a></h2>
+<p>The ERA-C compiler has several built-in constants for use with various functions. The following table lists their names and values:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>false</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>null</td>
+<td><code>0xFFFFFFFF</code></td>
+</tr>
+<tr>
+<td>SCREEN_WIDTH</td>
+<td><code>480</code></td>
+</tr>
+<tr>
+<td>SCREEN_HEIGHT</td>
+<td><code>360</code></td>
+</tr>
+<tr>
+<td>FONT_WIDTH</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>FONT_HEIGHT</td>
+<td><code>9</code></td>
+</tr>
+<tr>
+<td>MESH_LINES</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>MESH_TRIANGLES</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>MESH_QUADS</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>MAT_PROJECTION</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>MAT_MODELVIEW</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>CLEAR_NONE</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>CLEAR_COLOR</td>
+<td><code>0b100</code></td>
+</tr>
+<tr>
+<td>CLEAR_DEPTH</td>
+<td><code>0b010</code></td>
+</tr>
+<tr>
+<td>CLEAR_STENCIL</td>
+<td><code>0b001</code></td>
+</tr>
+<tr>
+<td>CLEAR_ALL</td>
+<td><code>0b111</code></td>
+</tr>
+<tr>
+<td>COLOR_NONE</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>COLOR_R</td>
+<td><code>0b1000</code></td>
+</tr>
+<tr>
+<td>COLOR_G</td>
+<td><code>0b0100</code></td>
+</tr>
+<tr>
+<td>COLOR_B</td>
+<td><code>0b0010</code></td>
+</tr>
+<tr>
+<td>COLOR_A</td>
+<td><code>0b0001</code></td>
+</tr>
+<tr>
+<td>COLOR_ALL</td>
+<td><code>0b1111</code></td>
+</tr>
+<tr>
+<td>TEXTURE_WRAP</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>TEXTURE_CLAMP</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>TEXTURE_NONE</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>CULL_BACK</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>CULL_FRONT</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>CULL_NONE</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>BLEND_ALPHA</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>BLEND_ADD</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>BLEND_MULTIPLY</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>BLEND_ADD_ALT</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td>BLEND_SUBTRACT</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>BLEND_PREMULTIPLY</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td>BLEND_CUSTOM</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>BLEND_CUSTOM_EX</td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>CAM_PERSPECTIVE</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>CAM_ORTHOGRAPHIC</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>LIGHT_POINT</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>LIGHT_DIRECTIONAL</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>FACE_FRONT</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>FACE_BACK</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>FACE_BOTH</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>FUNC_LESS</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>FUNC_LEQUAL</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>FUNC_GREATER</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>FUNC_GEQUAL</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td>FUNC_EQUAL</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>FUNC_NOTEQUAL</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td>FUNC_ALWAYS</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>FUNC_NEVER</td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>FACTOR_ZERO</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>FACTOR_ONE</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>FACTOR_SRC_RGB</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>FACTOR_ONE_MINUS_SRC_RGB</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td>FACTOR_DST_RGB</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>FACTOR_ONE_MINUS_DST_RGB</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td>FACTOR_SRC_ALPHA</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>FACTOR_ONE_MINUS_SRC_ALPHA</td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>FACTOR_DST_ALPHA</td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td>FACTOR_ONE_MINUS_DST_ALPHA</td>
+<td><code>9</code></td>
+</tr>
+<tr>
+<td>FACTOR_CONSTANT_RGB</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td>FACTOR_ONE_MINUS_CONSTANT_RGB</td>
+<td><code>11</code></td>
+</tr>
+<tr>
+<td>FACTOR_CONSTANT_ALPHA</td>
+<td><code>12</code></td>
+</tr>
+<tr>
+<td>FACTOR_ONE_MINUS_CONSTANT_ALPHA</td>
+<td><code>13</code></td>
+</tr>
+<tr>
+<td>FACTOR_SRC_ALPHA_SATURATE</td>
+<td><code>14</code></td>
+</tr>
+<tr>
+<td>EQ_ADD</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>EQ_SUBTRACT</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>EQ_SUBTRACT_REVERSE</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>EQ_MIN</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td>EQ_MAX</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>STENCIL_KEEP</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>STENCIL_REPLACE</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>STENCIL_INC</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>STENCIL_INC_WRAP</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td>STENCIL_DEC</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>STENCIL_DEC_WRAP</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td>STENCIL_ZERO</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>STENCIL_INVERT</td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>BTN_UP</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>BTN_DOWN</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>BTN_LEFT</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>BTN_RIGHT</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td>BTN_TRIANGLE</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>BTN_CROSS</td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td>BTN_SQUARE</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>BTN_CIRCLE</td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>BTN_L1</td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td>BTN_L2</td>
+<td><code>9</code></td>
+</tr>
+<tr>
+<td>BTN_R1</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td>BTN_R2</td>
+<td><code>11</code></td>
+</tr>
+<tr>
+<td>BTN_SELECT</td>
+<td><code>12</code></td>
+</tr>
+<tr>
+<td>BTN_START</td>
+<td><code>13</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="built-in-structs">Built-in Structs<a class="headerlink" href="#built-in-structs" title="Permanent link">&para;</a></h2>
+<p>ERA-C has multiple built-in struct types for representing various objects. Unlike the vector and <code>string</code> types, which behave like structs in certain situations, these built-in structs do not have any custom functionality built into the compiler.</p>
+<h3 id="matrix"><code>matrix</code><a class="headerlink" href="#matrix" title="Permanent link">&para;</a></h3>
+<p>The <code>matrix</code> struct is a 4x4 matrix used for storing transformations like translation, rotation, and scale.</p>
+<p>TODO: explain member ordering</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">matrix</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">m0</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m4</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m8</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m12</span><span class="p">;</span><span class="w">  </span><span class="c1">// first row</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">m1</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m5</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m9</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m13</span><span class="p">;</span><span class="w">  </span><span class="c1">// second row</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">m2</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m6</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m10</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m14</span><span class="p">;</span><span class="w"> </span><span class="c1">// third row</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">m3</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m7</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m11</span><span class="p">;</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">m15</span><span class="p">;</span><span class="w"> </span><span class="c1">// fourth row</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="vertex"><code>vertex</code><a class="headerlink" href="#vertex" title="Permanent link">&para;</a></h3>
+<p>The <code>vertex</code> struct contains 3D vertex data according to the order that vertex data is stored in OBJMEM and OBJBANKs.</p>
+<p>Thus, OBJMEM and OBJBANKs can be treated as arrays of <code>vertex</code> structs.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">vertex</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">normal</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec2</span><span class="w"> </span><span class="n">uv</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="cam2d"><code>cam2d</code><a class="headerlink" href="#cam2d" title="Permanent link">&para;</a></h3>
+<p>In SYSMEM, there are 4 memory-mapped 2D cameras that can be used for configuring the view.</p>
+<p>To get a pointer to a 2D camera, use the <code>getCam2D()</code> function.</p>
+<div class="highlight"><pre><span></span><code><span class="n">cam2d</span><span class="o">*</span><span class="w"> </span><span class="n">cam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getCam2D</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// get a pointer to 2D camera 0</span>
+</code></pre></div>
+<p>To configure the view to a built-in 2D camera, use the <code>camera2D()</code> function.</p>
+<div class="highlight"><pre><span></span><code><span class="n">camera2D</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// use 2D camera 0</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>When <code>camera2D()</code> is called, depth testing is automatically disabled.</p>
+</div>
+<p>The <code>cam2d</code> struct has the following definition:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">cam2d</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">vec2</span><span class="w"> </span><span class="n">offset</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec2</span><span class="w"> </span><span class="n">target</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">rotation</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">zoom</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="cam3d"><code>cam3d</code><a class="headerlink" href="#cam3d" title="Permanent link">&para;</a></h3>
+<p>In SYSMEM, there are 4 memory-mapped 3D cameras that can be used for configuring the view.</p>
+<p>To get a pointer to a 3D camera, use the <code>getCam3D()</code> function.</p>
+<div class="highlight"><pre><span></span><code><span class="n">cam3d</span><span class="o">*</span><span class="w"> </span><span class="n">cam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getCam3D</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// get a pointer to 3D camera 0</span>
+</code></pre></div>
+<p>To configure the view to a built-in 3D camera, use the <code>camera3D()</code> function.</p>
+<div class="highlight"><pre><span></span><code><span class="n">camera3D</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// use 3D camera 0</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>When <code>camera3D()</code> is called, depth testing is automatically enabled.</p>
+</div>
+<p>The <code>cam3d</code> struct has the following definition:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">cam3d</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">target</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">up</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">fov</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">projection</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="light"><code>light</code><a class="headerlink" href="#light" title="Permanent link">&para;</a></h3>
+<p>In SYSMEM, there are 8 memory-mapped lights that are used when lighting is enabled.</p>
+<p>To get a pointer to a light, use the <code>getLight()</code> function.</p>
+<div class="highlight"><pre><span></span><code><span class="n">light</span><span class="o">*</span><span class="w"> </span><span class="n">light0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getLight</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// get a pointer to light 0</span>
+</code></pre></div>
+<p>The <code>light</code> struct has the following definition:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">light</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">enabled</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">direction</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="collision-objects">Collision Objects<a class="headerlink" href="#collision-objects" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The physics system is very experimental and subject to change.</p>
+<p>Currently, collision detection is only implemented for <code>colaabb</code> vs <code>colaabb</code>.</p>
+</div>
+<p>ERA-3D has built-in API functions for 3D collision detection. These API functions accept pointers to collision object structs to know what objects to test.</p>
+<p>Each collision object struct contains a <code>type</code> integer member that must be set to the correct ID value in order for the collision functions to properly identify them.</p>
+<p>The following table lists all collision object IDs:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Collision Object Struct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>colpoint</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>colaabb</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>colsphere</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>colcylinder</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>coltriangle</code></td>
+</tr>
+</tbody>
+</table>
+<p>To check for collisions using these structs, use the <code>checkCollision()</code> API function.</p>
+<div class="highlight"><pre><span></span><code><span class="n">colaabb</span><span class="w"> </span><span class="n">box1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colaabb</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="p">(),</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="n">colaabb</span><span class="w"> </span><span class="n">box2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colaabb</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="p">(),</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">checkCollision</span><span class="p">(</span><span class="o">&amp;</span><span class="n">box1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">box2</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// box1 and box2 are colliding!</span>
+<span class="w">  </span><span class="c1">// handle collision here...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="colpoint"><code>colpoint</code><a class="headerlink" href="#colpoint" title="Permanent link">&para;</a></h4>
+<p>A <code>colpoint</code> represents a single point in 3D space.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">colpoint</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h4 id="colaabb"><code>colaabb</code><a class="headerlink" href="#colaabb" title="Permanent link">&para;</a></h4>
+<p>A <code>colaabb</code> represents an Axis Aligned Bounding Box, a 3D box that cannot be rotated.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">colaabb</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">depth</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h4 id="colsphere"><code>colsphere</code><a class="headerlink" href="#colsphere" title="Permanent link">&para;</a></h4>
+<p>A <code>colsphere</code> represents a 3D sphere.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">colsphere</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h4 id="colcylinder"><code>colcylinder</code><a class="headerlink" href="#colcylinder" title="Permanent link">&para;</a></h4>
+<p>A <code>colcylinder</code> represents a 3D cylinder.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">colcylinder</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h4 id="coltriangle"><code>coltriangle</code><a class="headerlink" href="#coltriangle" title="Permanent link">&para;</a></h4>
+<p>A <code>coltriangle</code> represents a 3D triangle.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">coltriangle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">point1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">point2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vec3</span><span class="w"> </span><span class="n">point3</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="differences-from-c">Differences From C<a class="headerlink" href="#differences-from-c" title="Permanent link">&para;</a></h2>
+<p>The following table lists the main differences between C and ERA-C semantics.</p>
+<table>
+<thead>
+<tr>
+<th>C</th>
+<th>ERA-C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-line comments cannot be nested</td>
+<td>Multi-line comments can be nested</td>
+</tr>
+<tr>
+<td>Multiple integer and floating-point types of various sizes</td>
+<td>Only <code>int</code> and <code>float</code>, both 32-bit (4 bytes)</td>
+</tr>
+<tr>
+<td>Leading zeros indicate octal format</td>
+<td>Leading zeros do not indicate octal format, and are ignored</td>
+</tr>
+<tr>
+<td>Pointer &lt;-&gt; Integer conversion is not generally recommended</td>
+<td>Pointer &lt;-&gt; <code>int</code> is 100% legal</td>
+</tr>
+<tr>
+<td><code>NULL</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>NULL</code> == 0</td>
+<td><code>null</code> != 0</td>
+</tr>
+<tr>
+<td><code>void foo()</code> accepts any number of arguments</td>
+<td><code>void foo()</code> does not accept any arguments</td>
+</tr>
+<tr>
+<td><code>void foo(void)</code> does not accept any arguments</td>
+<td><code>void foo(void)</code> is a compile error</td>
+</tr>
+<tr>
+<td><code>main()</code> is the program starting point</td>
+<td>Hook functions <code>init()</code>, <code>update()</code>, and <code>draw()</code> are called periodically</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
