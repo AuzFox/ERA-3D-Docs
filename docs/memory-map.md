@@ -37,7 +37,7 @@ __Memory Card__   |                  |                         |
 
 ## System Memory
 
-todo
+TODO
 
 ### `HEAP`
 
