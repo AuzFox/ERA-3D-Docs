@@ -1,0 +1,40 @@
+site_name: ERA-3D Docs
+site_url: https://mydomain.org/mysite
+repo_name: AuzFox/ERA-3D
+repo_url: https://github.com/AuzFox/ERA-3D
+nav:
+    - Home: index.md
+    - Building: building.md
+    - Editors: editors.md
+    - ERA-C Overview: era-c-overview.md
+    - API Reference: api-reference.md
+    - Memory Map: memory-map.md
+    - Configuration: configuration.md
+theme:
+    name: material
+    icon:
+        repo: fontawesome/brands/github
+    logo: assets/logo_3d_big.png
+    favicon: assets/logo_3d_small.png
+    palette:
+        scheme: slate
+        primary: grey
+        accent: blue
+    features:
+        - navigation.tabs
+        - navigation.top
+        - toc.follow
+        - toc.integrate
+markdown_extensions:
+    - toc:
+        permalink: true
+    - def_list
+    - attr_list
+    - md_in_html
+    - admonition
+    - pymdownx.highlight
+    - pymdownx.inlinehilite
+    - pymdownx.superfences
+    - pymdownx.keys
+    - pymdownx.tabbed:
+        alternate_style: true
