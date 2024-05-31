@@ -74,12 +74,24 @@ int b = -24; // negative value
 int hex = 0xFF; // hexadecimal value (255)
 int binary = 0b10101010; // binary value (170)
 
-// To make large numbers easier to read, underscores can be inserted between digits.
+// to make large numbers easier to read, underscores can be inserted between digits.
 int big_number = 12_345_678;
 
-// Character literals are also supported, and are interpreted as int values.
+// character literals are also supported, and are interpreted as int values.
 int letter_e = 'E';
 ```
+
+ERA-C has a special syntax for encoding note values used by the soundchip.
+
+The `0n` prefix followed by a note name (see list below) and an octave number (0-8) define a note.
+
+```C
+int c_sharp_4 = 0nC#4; // soundchip note value (note C#, octave 4)
+```
+
+All valid note names are listed below. Notes can be written using upper or lower case.
+
+`C, C#, D, D#, E, F, F#, G, G#, A, A#, B`
 
 `int`s support various arithmetic operations, as well as bitwise and logical ones.
 
@@ -236,6 +248,11 @@ struct string {
   void* data;
 };
 ```
+
+!!! warning
+	String literals allocate space in cartridge ROM to store their data, so trying to write characters into a `string` initialized using a literal will cause an error and halt the program.
+
+	If a modifiable string is needed, a `string` struct can be manually created to point to somewhere in RAM.
 
 Strings support the `==` and `!=` operators. Two strings are considered equal if the following conditions are met:
 
@@ -712,15 +729,30 @@ Name | Value
 true | `1`
 false | `0`
 null | `0xFFFFFFFF`
-SCREEN_WIDTH | `480`
-SCREEN_HEIGHT | `360`
-FONT_WIDTH | `6`
-FONT_HEIGHT | `9`
-MESH_LINES | `0`
-MESH_TRIANGLES | `1`
-MESH_QUADS | `2`
-MAT_PROJECTION | `0`
-MAT_MODELVIEW | `1`
+BLEND_ALPHA | `0`
+BLEND_ADD | `1`
+BLEND_MULTIPLY | `2`
+BLEND_ADD_ALT | `3`
+BLEND_SUBTRACT | `4`
+BLEND_PREMULTIPLY | `5`
+BLEND_CUSTOM | `6`
+BLEND_CUSTOM_EX | `7`
+BTN_UP | `0`
+BTN_DOWN | `1`
+BTN_LEFT | `2`
+BTN_RIGHT | `3`
+BTN_TRIANGLE | `4`
+BTN_CROSS | `5`
+BTN_SQUARE | `6`
+BTN_CIRCLE | `7`
+BTN_L1 | `8`
+BTN_L2 | `9`
+BTN_R1 | `10`
+BTN_R2 | `11`
+BTN_SELECT | `12`
+BTN_START | `13`
+CAM_PERSPECTIVE | `0`
+CAM_ORTHOGRAPHIC | `1`
 CLEAR_NONE | `0`
 CLEAR_COLOR | `0b100`
 CLEAR_DEPTH | `0b010`
@@ -732,35 +764,17 @@ COLOR_G | `0b0100`
 COLOR_B | `0b0010`
 COLOR_A | `0b0001`
 COLOR_ALL | `0b1111`
-TEXTURE_WRAP | `0`
-TEXTURE_CLAMP | `1`
-TEXTURE_NONE | `2`
 CULL_BACK | `0`
 CULL_FRONT | `1`
 CULL_NONE | `2`
-BLEND_ALPHA | `0`
-BLEND_ADD | `1`
-BLEND_MULTIPLY | `2`
-BLEND_ADD_ALT | `3`
-BLEND_SUBTRACT | `4`
-BLEND_PREMULTIPLY | `5`
-BLEND_CUSTOM | `6`
-BLEND_CUSTOM_EX | `7`
-CAM_PERSPECTIVE | `0`
-CAM_ORTHOGRAPHIC | `1`
-LIGHT_POINT | `0`
-LIGHT_DIRECTIONAL | `1`
+EQ_ADD | `0`
+EQ_SUBTRACT | `1`
+EQ_SUBTRACT_REVERSE | `2`
+EQ_MIN | `3`
+EQ_MAX | `4`
 FACE_FRONT | `0`
 FACE_BACK | `1`
 FACE_BOTH | `2`
-FUNC_LESS | `0`
-FUNC_LEQUAL | `1`
-FUNC_GREATER | `2`
-FUNC_GEQUAL | `3`
-FUNC_EQUAL | `4`
-FUNC_NOTEQUAL | `5`
-FUNC_ALWAYS | `6`
-FUNC_NEVER | `7`
 FACTOR_ZERO | `0`
 FACTOR_ONE | `1`
 FACTOR_SRC_RGB | `2`
@@ -776,11 +790,64 @@ FACTOR_ONE_MINUS_CONSTANT_RGB | `11`
 FACTOR_CONSTANT_ALPHA | `12`
 FACTOR_ONE_MINUS_CONSTANT_ALPHA | `13`
 FACTOR_SRC_ALPHA_SATURATE | `14`
-EQ_ADD | `0`
-EQ_SUBTRACT | `1`
-EQ_SUBTRACT_REVERSE | `2`
-EQ_MIN | `3`
-EQ_MAX | `4`
+FONT_WIDTH | `6`
+FONT_HEIGHT | `9`
+FUNC_LESS | `0`
+FUNC_LEQUAL | `1`
+FUNC_GREATER | `2`
+FUNC_GEQUAL | `3`
+FUNC_EQUAL | `4`
+FUNC_NOTEQUAL | `5`
+FUNC_ALWAYS | `6`
+FUNC_NEVER | `7`
+LIGHT_POINT | `0`
+LIGHT_DIRECTIONAL | `1`
+LOOP_OFF | `0`
+LOOP_FORWARD | `1`
+LOOP_PINGPONG | `2`
+LOOP_RANGE | `3`
+MAT_PROJECTION | `0`
+MAT_MODELVIEW | `1`
+MEMORY_HEAP | `0x00000000`
+MEMORY_TEXMEM | `0x00800000`
+MEMORY_OBJMEM | `0x00C00000`
+MEMORY_AOBMEM | `0x00F60000`
+MEMORY_SYSMEM | `0x00F62000`
+MEMORY_OBJMAP | `0x00F62054`
+MEMORY_WAVMAP | `0x00F63854`
+MEMORY_WAVMEM | `0x01000000`
+MEMORY_SEQMEM | `0x01700000`
+MEMORY_TEXBANK0 | `0x01800000`
+MEMORY_TEXBANK1 | `0x????????`
+MEMORY_TEXBANK2 | `0x????????`
+MEMORY_TEXBANK3 | `0x????????`
+MEMORY_OBJBANK0 | `0x02800000`
+MEMORY_OBJBANK1 | `0x????????`
+MEMORY_OBJBANK2 | `0x????????`
+MEMORY_OBJBANK3 | `0x????????`
+MEMORY_OMPBANK0 | `0x03580000`
+MEMORY_OMPBANK1 | `0x????????`
+MEMORY_OMPBANK2 | `0x????????`
+MEMORY_OMPBANK3 | `0x????????`
+MEMORY_WMPBANK0 | `0x036C0000`
+MEMORY_WMPBANK1 | `0x????????`
+MEMORY_WAVBANK0 | `0x03800000`
+MEMORY_WAVBANK1 | `0x????????`
+MEMORY_SEQBANK0 | `0x04600000`
+MEMORY_SEQBANK1 | `0x????????`
+MEMORY_SEQBANK2 | `0x????????`
+MEMORY_SEQBANK3 | `0x????????`
+MEMORY_SEQBANK4 | `0x????????`
+MEMORY_SEQBANK5 | `0x????????`
+MEMORY_SEQBANK6 | `0x????????`
+MEMORY_SEQBANK7 | `0x????????`
+MEMORY_ROM | `0x04800000`
+MEMORY_MEMCARD | `0x05800000`
+MESH_LINES | `0`
+MESH_TRIANGLES | `1`
+MESH_QUADS | `2`
+SCREEN_WIDTH | `480`
+SCREEN_HEIGHT | `360`
 STENCIL_KEEP | `0`
 STENCIL_REPLACE | `1`
 STENCIL_INC | `2`
@@ -789,20 +856,9 @@ STENCIL_DEC | `4`
 STENCIL_DEC_WRAP | `5`
 STENCIL_ZERO | `6`
 STENCIL_INVERT | `7`
-BTN_UP | `0`
-BTN_DOWN | `1`
-BTN_LEFT | `2`
-BTN_RIGHT | `3`
-BTN_TRIANGLE | `4`
-BTN_CROSS | `5`
-BTN_SQUARE | `6`
-BTN_CIRCLE | `7`
-BTN_L1 | `8`
-BTN_L2 | `9`
-BTN_R1 | `10`
-BTN_R2 | `11`
-BTN_SELECT | `12`
-BTN_START | `13`
+TEXTURE_WRAP | `0`
+TEXTURE_CLAMP | `1`
+TEXTURE_NONE | `2`
 
 ## Built-in Structs
 
@@ -1029,7 +1085,7 @@ Multiple integer and floating-point types of various sizes | Only `int` and `flo
 Leading zeros indicate octal format | Leading zeros do not indicate octal format, and are ignored
 Pointer <-> Integer conversion is not generally recommended | Pointer <-> `int` is 100% legal
 `NULL` | `null`
-`NULL` == 0 | `null` != 0
+`NULL` == 0 | `null` == `0xFFFFFFFF`
 `void foo()` accepts any number of arguments | `void foo()` does not accept any arguments
 `void foo(void)` does not accept any arguments | `void foo(void)` is a compile error
 `main()` is the program starting point | Hook functions `init()`, `update()`, and `draw()` are called periodically
