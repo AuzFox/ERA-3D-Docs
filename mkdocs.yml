@@ -5,7 +5,8 @@ repo_url: https://github.com/AuzFox/ERA-3D
 nav:
     - Home: index.md
     - Building: building.md
-    - Editors: editors.md
+    - User Guide: user-guide.md
+    - Demos: demos.md
     - ERA-C Overview: era-c-overview.md
     - API Reference: api-reference.md
     - Memory Map: memory-map.md

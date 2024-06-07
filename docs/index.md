@@ -14,7 +14,8 @@ For a guide on building ERA-3D from source, check out the [Building](building.md
 
 After building, see the following pages:
 
-- [Editors](editors.md): Guides for the built-in asset editors.
+- [User Guide](user-guide.md): Guide for using the program.
+- [Demos](demos.md): Download page containing demo programs demonstrating various aspects of ERA-3D.
 - [ERA-C Overview](era-c-overview.md): Overview of the ERA-C scripting language.
 - [API Reference](api-reference.md): Documentation for all built-in API functions.
 - [Memory Map](memory-map.md): Breakdown of the virtual memory map.
