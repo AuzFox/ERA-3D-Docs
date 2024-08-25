@@ -220,12 +220,29 @@
   
   
     <li class="md-tabs__item">
-      <a href="../editors/" class="md-tabs__link">
+      <a href="../user-guide/" class="md-tabs__link">
         
   
     
   
-  Editors
+  User Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../demos/" class="md-tabs__link">
+        
+  
+    
+  
+  Demos
 
       </a>
     </li>
@@ -395,11 +412,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../editors/" class="md-nav__link">
+      <a href="../user-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Editors
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Demos
   </span>
   
 
@@ -1037,11 +1074,8 @@
 <p>Address range: <code>0x00000000-0x007FFFFF</code></p>
 <p>Accessible using constant <code>MEMORY_HEAP</code>. (Or using an address of 0.)</p>
 <p>The heap is an 8MiB block of general-purpose RAM that can be used in any way the user sees fit.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>At the moment, heap memory must be managed entirely by the user.</p>
-<p>Heap allocation functions such as <code>alloc()</code>, <code>realloc()</code> and <code>free()</code> are planned.</p>
-</div>
+<p>The <a href="../api-reference/#alloc"><code>alloc()</code></a>, <a href="../api-reference/#realloc"><code>realloc()</code></a>, and <a href="../api-reference/#free"><code>free()</code></a> API functions can be used to allocate and deallocate memory blocks in the heap for dynamic memory management.</p>
+<p>Alternatively, the user may choose to manage the heap manually.</p>
 <h3 id="texmem"><code>TEXMEM</code><a class="headerlink" href="#texmem" title="Permanent link">&para;</a></h3>
 <p>Address range: <code>0x00800000-0x00BFFFFF</code></p>
 <p>Accessible using constant <code>MEMORY_TEXMEM</code>.</p>
