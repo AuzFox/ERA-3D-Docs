@@ -3341,13 +3341,14 @@ This function always rounds toward negative infinity.</p>
 <h3 id="matrixadd"><code>matrixAdd</code><a class="headerlink" href="#matrixadd" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixAdd</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">a</span></code>: The first matrix to add</li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">b</span></code>: The second matrix to add</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns a matrix that is the result of <strong>a</strong> + <strong>b</strong>.</p>
 </div>
 <h3 id="matrixidentity"><code>matrixIdentity</code><a class="headerlink" href="#matrixidentity" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -3355,94 +3356,131 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixIdentity</span><span class="p">()</span></code></p>
 <p><strong>Description</strong>:</p>
 <p>Returns an identity matrix. (a matrix with no transformations applied)</p>
+<p>An identity matrix can be constructed as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">matrix</span><span class="p">(</span>
+<span class="w">    </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span>
+<span class="p">)</span>
+</code></pre></div>
 </div>
 <h3 id="matrixinvert"><code>matrixInvert</code><a class="headerlink" href="#matrixinvert" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixInvert</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span></code>: The matrix to invert</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns the inverse matrix of <strong>m</strong>.</p>
+<p>An inverted matrix multiplied by the original will result in an identity matrix.</p>
 </div>
 <h3 id="matrixlookat"><code>matrixLookAt</code><a class="headerlink" href="#matrixlookat" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixLookAt</span><span class="p">(</span><span class="n">vec3</span><span class="w"> </span><span class="n">eye</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="n">up</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">eye</span></code>: Eye position</li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">target</span></code>: Target position</li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">up</span></code>: Up vector</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns a matrix describing a view from <strong>eye</strong> looking at <strong>target</strong> with an up vector of <strong>up</strong>.</p>
 </div>
 <h3 id="matrixmultiply"><code>matrixMultiply</code><a class="headerlink" href="#matrixmultiply" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixMultiply</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">a</span></code>: The first matrix to multiply</li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">b</span></code>: The second matrix to multiply</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns a matrix that is the result of <strong>a</strong> * <strong>b</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The order of matrices being multiplied is important, as <strong>a</strong> * <strong>b</strong> != <strong>b</strong> * <strong>a</strong>.</p>
+</div>
 </div>
 <h3 id="matrixrotate"><code>matrixRotate</code><a class="headerlink" href="#matrixrotate" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixRotate</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="n">rotation</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span></code>: Input matrix</li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">rotation</span></code>: Rotation vector</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns the result of a combined ZYX rotation matrix multiplied by <strong>m</strong>.</p>
 </div>
 <h3 id="matrixscale"><code>matrixScale</code><a class="headerlink" href="#matrixscale" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixScale</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="n">scale</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span></code>: Input matrix</li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">scale</span></code>: Scale vector</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns the result of a XYZ scale matrix multiplied by <strong>m</strong>.</p>
 </div>
 <h3 id="matrixsubtract"><code>matrixSubtract</code><a class="headerlink" href="#matrixsubtract" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixSubtract</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">a</span></code>: The first matrix to subtract</li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">b</span></code>: The second matrix to subtract</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns a matrix that is the result of <strong>a</strong> - <strong>b</strong>.</p>
 </div>
 <h3 id="matrixtranslate"><code>matrixTranslate</code><a class="headerlink" href="#matrixtranslate" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixTranslate</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="n">translation</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span></code>: Input matrix</li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">translation</span></code>: Translation vector</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns the result of a XYZ translation matrix multiplied by <strong>m</strong>.</p>
 </div>
 <h3 id="matrixtranspose"><code>matrixTranspose</code><a class="headerlink" href="#matrixtranspose" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">matrixTranspose</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span></code>: The matrix to transpose</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns the transposed matrix of <strong>m</strong>.</p>
+<p>A transposed matrix is a matrix where its rows have been replaced by its columns.</p>
+<p>For example, transposing the input matrix</p>
+<div class="highlight"><pre><span></span><code><span class="n">matrix</span><span class="p">(</span>
+<span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>returns the matrix</p>
+<div class="highlight"><pre><span></span><code><span class="n">matrix</span><span class="p">(</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">,</span>
+<span class="w">    </span><span class="mi">4</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">,</span>
+<span class="w">    </span><span class="mi">8</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span>
+<span class="p">)</span>
+</code></pre></div>
 </div>
 <h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h2>
 <h3 id="getmousedelta"><code>getMouseDelta</code><a class="headerlink" href="#getmousedelta" title="Permanent link">&para;</a></h3>
@@ -3894,11 +3932,11 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">setMouseLock</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lock</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">lock</span></code>: Lock setting [true/false]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">lock</span></code>: Mouse lock flag [true/false]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>If lock is true, hides and locks the mouse to the screen.</p>
-<p>If lock is false, shows and unlocks the mouse.</p>
+<p>If <strong>lock</strong> is true, hides and locks the mouse to the screen.</p>
+<p>If <strong>lock</strong> is false, shows and unlocks the mouse.</p>
 </div>
 <h2 id="graphics">Graphics<a class="headerlink" href="#graphics" title="Permanent link">&para;</a></h2>
 <h3 id="ambientcolor"><code>ambientColor</code><a class="headerlink" href="#ambientcolor" title="Permanent link">&para;</a></h3>
@@ -4510,7 +4548,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">fogColor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="o">:</span></code> The fog color to use (RGBA32 format)</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">color</span></code>: The fog color to use (RGBA32 format)</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Sets the current fog tint color.</p>
@@ -4521,7 +4559,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="nf">fogEnd</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">end</span><span class="p">);</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">end</span><span class="o">:</span></code> The distance from the camera where the fog ends. [0.0-1000.0]</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">end</span></code>: The distance from the camera where the fog ends. [0.0-1000.0]</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Sets the fog end distance setting.</p>
@@ -4529,14 +4567,14 @@ This function always rounds toward negative infinity.</p>
 <h3 id="fogmode"><code>fogMode</code><a class="headerlink" href="#fogmode" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">fogMode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">enabled</span><span class="p">)</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">fogMode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">enable</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">enabled</span><span class="o">:</span></code> Fog enable flag [true/false]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">enable</span></code>: Fog enable flag [true/false]</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Enables/disables fog.</p>
-<p>If <strong>enabled</strong> is true, fog rendering will be enabled.</p>
+<p>If <strong>enable</strong> is true, fog rendering will be enabled.</p>
 <p>Otherwise, fog rendering will be disabled.</p>
 <p>Fog is rendered by fading the color of geometry to the set fog color.</p>
 <p>The fog start setting determines how far from the camera the fade begins.</p>
@@ -4548,7 +4586,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="nf">fogStart</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">start</span><span class="p">);</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">start</span><span class="o">:</span></code> The distance from the camera to start rendering fog. [0.0-1000.0]</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">start</span></code>: The distance from the camera to start rendering fog. [0.0-1000.0]</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Sets the fog starting distance setting.</p>
@@ -4556,13 +4594,18 @@ This function always rounds toward negative infinity.</p>
 <h3 id="frustum"><code>frustum</code><a class="headerlink" href="#frustum" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">frustum</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">bottom</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">near</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">far</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">left</span></code>: Minimum X coordinate of the near clipping plane</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">right</span></code>: Maximum X coordinate of the near clipping plane</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">bottom</span></code>: Minimum Y coordinate of the near clipping plane</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">top</span></code>: Maximum Y coordinate of the near clipping plane</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">near</span></code>: Near clipping plane distance</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">far</span></code>: Far clipping plane distance</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Configures the topmost matrix of the current matrix stack to a projection matrix describing a camera frustum (perpective projection).</p>
 </div>
 <h3 id="getcam2d"><code>getCam2D</code><a class="headerlink" href="#getcam2d" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4570,10 +4613,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="n">cam2d</span><span class="o">*</span><span class="w"> </span><span class="n">getCam2D</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">camera</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">camera</span><span class="o">:</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="mi">2</span><span class="n">D</span><span class="w"> </span><span class="n">camera</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="p">[</span><span class="mi">0-3</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">camera</span></code>: Index of the 2D camera to get [0-3]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Returns a pointer to the given 2d camera.</p>
+<p>Returns a pointer to the given 2D camera.</p>
 </div>
 <h3 id="getcam3d"><code>getCam3D</code><a class="headerlink" href="#getcam3d" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4581,10 +4624,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="n">cam3d</span><span class="o">*</span><span class="w"> </span><span class="n">getCam3D</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">camera</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">camera</span><span class="o">:</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="mi">3</span><span class="n">D</span><span class="w"> </span><span class="n">camera</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="p">[</span><span class="mi">0-3</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">camera</span></code>: Index of the 3D camera to get [0-3]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Returns a pointer to the given 3d camera.</p>
+<p>Returns a pointer to the given 3D camera.</p>
 </div>
 <h3 id="getlight"><code>getLight</code><a class="headerlink" href="#getlight" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4592,7 +4635,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="n">light</span><span class="o">*</span><span class="w"> </span><span class="n">getLight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">light</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">light</span><span class="o">:</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">light</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="p">[</span><span class="mi">0-7</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">light</span></code>: Index of the light to get [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Returns a pointer to the given light.</p>
@@ -4632,28 +4675,29 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">lightingMode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">lighting</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="p">[</span><span class="nb">true</span><span class="o">/</span><span class="nb">false</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">mode</span></code>: Lighting mode flag [true/false]</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Enables/disables vertex lighting.</p>
-<p>If mode is true, lighting will be enabled.</p>
+<p>If <strong>mode</strong> is true, lighting will be enabled.</p>
 <p>Otherwise, lighting will be disabled.</p>
 <p>Vertex lighting changes vertex colors to simulate lighting.</p>
-<p>When lighting is enabled, meshcolor() calls will be ignored.</p>
+<p>When lighting is enabled, <code>meshcolor()</code> calls will be ignored.</p>
 <p>Ambient lighting is also calculated when lighting is enabled.</p>
-<p>Ambient lighting is a form of light that every object</p>
-<p>Recieves equally.</p>
+<p>Ambient lighting is a form of light that every object recieves equally.</p>
 </div>
 <h3 id="lookat"><code>lookAt</code><a class="headerlink" href="#lookat" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">lookAt</span><span class="p">(</span><span class="n">vec3</span><span class="w"> </span><span class="n">eye</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">vec3</span><span class="w"> </span><span class="n">up</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">eye</span></code>: Eye position</li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">target</span></code>: Target position</li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">up</span></code>: Up vector</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Configures the topmost matrix of the current matrix stack to a view matrix describing a view from <strong>eye</strong> looking at <strong>target</strong> with an up vector of <strong>up</strong>.</p>
 </div>
 <h3 id="meshcolor"><code>meshColor</code><a class="headerlink" href="#meshcolor" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4661,15 +4705,12 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">meshColor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">vertex</span><span class="w"> </span><span class="p">(</span><span class="n">RGBA32</span><span class="w"> </span><span class="n">format</span><span class="p">)</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">color</span></code>: The color to use for the current vertex (RGBA32 format)</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Submits the tint color for the current mesh vertex.</p>
-<p>Vertex colors can be used to tint the texture of a mesh.</p>
-<p>The colors of each vertex are blended across the mesh surface.</p>
-<p>Vertex colors are multiplied with texture pixel colors,</p>
-<p>So a vertex color of pure white will result in the</p>
-<p>Original pixel color.</p>
+<p>Vertex colors can be used to tint the texture of a mesh, the colors of each vertex are blended across the mesh surface.</p>
+<p>Vertex colors are multiplied with texture pixel colors, so a vertex color of pure white will result in the original pixel color.</p>
 <p>If lighting is enabled, this function does nothing.</p>
 </div>
 <h3 id="meshnormal"><code>meshNormal</code><a class="headerlink" href="#meshnormal" title="Permanent link">&para;</a></h3>
@@ -4678,15 +4719,14 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">meshNormal</span><span class="p">(</span><span class="n">vec3</span><span class="w"> </span><span class="n">normal</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">normal</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="mi">3</span><span class="n">D</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">vertex</span></code></li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">normal</span></code>: The 3D normal vector to use for the current vertex</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Submits the 3d normal vector for the current mesh vertex.</p>
-<p>The vector must be normalized. (normal must have a length of 1)</p>
+<p>Submits the 3D normal vector for the current mesh vertex.</p>
+<p>The vector must be normalized. (<strong>normal</strong> must have a length of 1)</p>
 <p>Normal vectors are used when calculating lighting.</p>
-<p>A vertex with a normal vector pointing toward a light will recieve more</p>
-<p>Light than one with a normal vector pointing away from the light.</p>
-<p>If lighting is not enabled, this function does nothing.</p>
+<p>A vertex with a normal vector pointing toward a light will recieve more light than one with a normal vector pointing away from the light.</p>
+<p>If lighting is disabled, this function does nothing.</p>
 </div>
 <h3 id="meshuv"><code>meshUV</code><a class="headerlink" href="#meshuv" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4694,15 +4734,14 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">meshUV</span><span class="p">(</span><span class="n">vec2</span><span class="w"> </span><span class="n">uv</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">vec2</span><span class="w"> </span><span class="n">uv</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="mi">2</span><span class="n">D</span><span class="w"> </span><span class="n">texture</span><span class="w"> </span><span class="n">coordinates</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">vertex</span></code></li>
+<li><code class="highlight"><span class="n">vec2</span><span class="w"> </span><span class="n">uv</span></code>: The 2D texture coordinates to use for the current vertex</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Submits the 2d texture coordinates for the current mesh vertex.</p>
-<p>(0.0, 0.0) corresponds to the top-left corner of the texture.</p>
-<p>(1.0, 1.0) corresponds to the bottom-right corner of the texture.</p>
-<p>The normal range for uv coordinates is (0.0, 0.0) to (1.0, 1.0),</p>
-<p>Values outside the 0.0-1.0 range will be treated differently</p>
-<p>Depending on the current texture mode. (see settexturemode())</p>
+<p>Submits the 2D texture coordinates for the current mesh vertex.</p>
+<p><code>(0.0, 0.0)</code> corresponds to the top-left corner of the texture.</p>
+<p><code>(1.0, 1.0)</code> corresponds to the bottom-right corner of the texture.</p>
+<p>The normal range for uv coordinates is <code>(0.0, 0.0)</code> to <code>(1.0, 1.0)</code>,</p>
+<p>Values outside the <code>0.0</code>-<code>1.0</code> range will be treated differently depending on the current texture mode. (see textureMode())</p>
 </div>
 <h3 id="meshvertex"><code>meshVertex</code><a class="headerlink" href="#meshvertex" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4710,11 +4749,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">meshVertex</span><span class="p">(</span><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="mi">3</span><span class="n">D</span><span class="w"> </span><span class="n">coordinates</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">vertex</span></code></li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">v</span></code>: The 3D coordinates to use for the current vertex</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Submits the 3d coordinates for the current mesh vertex and</p>
-<p>Finalizes the vertex.</p>
+<p>Submits the 3D coordinates for the current mesh vertex and finalizes the vertex.</p>
 <p>This function should be called after all other desired vertex properties</p>
 <p>(uv, color, normal) have been submitted.</p>
 </div>
@@ -4724,11 +4762,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">meshVertex2D</span><span class="p">(</span><span class="n">vec2</span><span class="w"> </span><span class="n">v</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">vec2</span><span class="w"> </span><span class="n">v</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="mi">2</span><span class="n">D</span><span class="w"> </span><span class="n">screen</span><span class="w"> </span><span class="n">coordinates</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">vertex</span></code></li>
+<li><code class="highlight"><span class="n">vec2</span><span class="w"> </span><span class="n">v</span></code>: The 2D screen coordinates to use for the current vertex</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Submits the 2d coordinates for the current mesh vertex and</p>
-<p>Finalizes the vertex.</p>
+<p>Submits the 2D coordinates for the current mesh vertex and finalizes the vertex.</p>
 <p>This function should be called after all other desired vertex properties</p>
 <p>(uv, color, normal) have been submitted.</p>
 </div>
@@ -4738,7 +4775,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">multiplyTopMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">multiply</span><span class="w"> </span><span class="n">by</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span></code>: The matrix to multiply by</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Multiplies the topmost matrix of the current stack by the given matrix.</p>
@@ -4746,24 +4783,56 @@ This function always rounds toward negative infinity.</p>
 <h3 id="ortho"><code>ortho</code><a class="headerlink" href="#ortho" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">ortho</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">bottom</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">near</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">far</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">left</span></code>: Minimum X coordinate of the near clipping plane</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">right</span></code>: Maximum X coordinate of the near clipping plane</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">bottom</span></code>: Minimum Y coordinate of the near clipping plane</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">top</span></code>: Maximum Y coordinate of the near clipping plane</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">near</span></code>: Near clipping plane distance</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">far</span></code>: Far clipping plane distance</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Configures the topmost matrix of the current matrix stack to a projection matrix describing an orthographic projection.</p>
 </div>
 <h3 id="polygonmode"><code>polygonMode</code><a class="headerlink" href="#polygonmode" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">polygonMode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">mode</span></code>: The new polygon mode to use [0-2]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Sets the polygon fill mode.</p>
+<p><strong>mode</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POLY_POINT</code></td>
+<td>0</td>
+<td>Draw only polygon vertices as points</td>
+</tr>
+<tr>
+<td><code>POLY_LINE</code></td>
+<td>1</td>
+<td>Draw polygons as wireframes</td>
+</tr>
+<tr>
+<td><code>POLY_FILL</code></td>
+<td>2</td>
+<td>Draw filled polygons</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="popmatrix"><code>popMatrix</code><a class="headerlink" href="#popmatrix" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4778,23 +4847,57 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">print2D</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">fmt</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="n">screen</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">position</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="n">screen</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">position</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="p">(</span><span class="n">RGBA32</span><span class="w"> </span><span class="n">format</span><span class="p">)</span></code></li>
-<li><code class="highlight"><span class="n">string</span><span class="w"> </span><span class="n">fmt</span><span class="o">:</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="n">string</span></code></li>
-<li><code class="highlight"><span class="p">...</span><span class="w">       </span><span class="o">:</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="n">values</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span></code>: Text screen x position</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">y</span></code>: Text screen y position</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">color</span></code>: The text color to use (RGBA32 format)</li>
+<li><code class="highlight"><span class="n">string</span><span class="w"> </span><span class="n">fmt</span></code>: Format text string</li>
+<li><code class="highlight"><span class="p">...</span></code>: Values to format</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Prints a formatted text string to the screen.</p>
-<p>Format specifiers:</p>
-<p>%%       literal '%' character</p>
-<p>%d or %i signed integer value</p>
-<p>%u       unsigned integer value</p>
-<p>%f       float value</p>
-<p>%x       lowercase hexidecimal integer value</p>
-<p>%x       uppercase hexidecimal integer value</p>
-<p>%v2      vec2 value</p>
-<p>%v3      vec3 value</p>
+<p>The following table lists all supported format specifiers:</p>
+<table>
+<thead>
+<tr>
+<th>Format Specifier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%%</code></td>
+<td>Literal <code>%</code> character</td>
+</tr>
+<tr>
+<td><code>%d</code> or <code>%i</code></td>
+<td>Signed <code>int</code> value</td>
+</tr>
+<tr>
+<td><code>%u</code></td>
+<td>Unsigned <code>int</code> value</td>
+</tr>
+<tr>
+<td><code>%f</code></td>
+<td><code>float</code> value</td>
+</tr>
+<tr>
+<td><code>%x</code></td>
+<td>Lowercase hexidecimal integer value (zero-padded)</td>
+</tr>
+<tr>
+<td><code>%X</code></td>
+<td>Uppercase hexidecimal integer value (zero-padded)</td>
+</tr>
+<tr>
+<td><code>%v2</code></td>
+<td><code>vec2</code> value</td>
+</tr>
+<tr>
+<td><code>%v3</code></td>
+<td><code>vec3</code> value</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="pushmatrix"><code>pushMatrix</code><a class="headerlink" href="#pushmatrix" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4809,10 +4912,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">rotate</span><span class="p">(</span><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">rotate</span><span class="w"> </span><span class="n">by</span></code></li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">v</span></code>: The vector to rotate by</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Rotates the topmost matrix of the current matrix by the 3d vector v.</p>
+<p>Rotates the topmost matrix of the current matrix stack by the 3D vector <strong>v</strong>.</p>
 <p>Rotation angles must be in degrees.</p>
 </div>
 <h3 id="scale"><code>scale</code><a class="headerlink" href="#scale" title="Permanent link">&para;</a></h3>
@@ -4821,10 +4924,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">scale</span><span class="p">(</span><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="n">by</span></code></li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">v</span></code>: The vector to scale by</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Scales the topmost matrix of the current matrix by the 3d vector v.</p>
+<p>Scales the topmost matrix of the current matrix stack by the 3D vector <strong>v</strong>.</p>
 </div>
 <h3 id="scissor"><code>scissor</code><a class="headerlink" href="#scissor" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4832,9 +4935,9 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">scissor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span></code>: Scissor screen x position [0-479]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span></code>: Scissor screen x position [0-639]</li>
 <li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">y</span></code>: Scissor screen y position [0-359]</li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">width</span></code>: Scissor width [1-480]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">width</span></code>: Scissor width [1-640]</li>
 <li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">height</span></code>: Scissor height [1-360]</li>
 </ul>
 <p><strong>Description</strong>:</p>
@@ -4844,13 +4947,13 @@ This function always rounds toward negative infinity.</p>
 <h3 id="scissormode"><code>scissorMode</code><a class="headerlink" href="#scissormode" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">scissorMode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">enable</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">enable</span></code>: Scissor test flag [true/false]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Enables/disables scissor testing.</p>
 </div>
 <h3 id="setmodelviewmatrix"><code>setModelViewMatrix</code><a class="headerlink" href="#setmodelviewmatrix" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4858,7 +4961,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">setModelViewMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span></code>: The new matrix to use</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Sets the topmost model-view matrix to the given matrix.</p>
@@ -4869,7 +4972,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">setProjectionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span></code></li>
+<li><code class="highlight"><span class="n">matrix</span><span class="w"> </span><span class="n">m</span></code>: The new matrix to use</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Sets the topmost projection matrix to the given matrix.</p>
@@ -4877,68 +4980,275 @@ This function always rounds toward negative infinity.</p>
 <h3 id="sprite2d"><code>sprite2D</code><a class="headerlink" href="#sprite2d" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">sprite2D</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">src_x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">src_y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">src_w</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">src_h</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dest_x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dest_y</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">src_x</span></code>: Source X pixel coordinate</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">src_y</span></code>: Source Y pixel coordinate</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">src_w</span></code>: Source rectangle pixel width</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">src_h</span></code>: Source rectangle pixel height</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">dest_x</span></code>: Destination screen X coordinate</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">dest_y</span></code>: Destination screen Y coordinate</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Draws a 2D rectangular portion of <code>TEXMEM</code> to the screen.</p>
 </div>
 <h3 id="sprite2dex"><code>sprite2DEx</code><a class="headerlink" href="#sprite2dex" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">sprite2DEx</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">src_x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">src_y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">src_w</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">src_h</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dest_x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dest_y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dest_w</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dest_h</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">src_x</span></code>: Source X pixel coordinate</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">src_y</span></code>: Source Y pixel coordinate</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">src_w</span></code>: Source rectangle pixel width</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">src_h</span></code>: Source rectangle pixel height</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">dest_x</span></code>: Destination screen X coordinate</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">dest_y</span></code>: Destination screen Y coordinate</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">dest_w</span></code>: Destination screen rectangle width</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">dest_h</span></code>: Destination screen rectangle height</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Draws a 2D rectangular portion of <code>TEXMEM</code> to the screen, scaled to the given destination rectangle.</p>
 </div>
 <h3 id="stencilfunc"><code>stencilFunc</code><a class="headerlink" href="#stencilfunc" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">stencilFunc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">func</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ref</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mask</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">face</span></code>: The face value to configure [0-2]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">func</span></code>: The comparison function to use [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">ref</span></code>: Reference stencil value for comparison [0x00-0xFF]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">mask</span></code>: Mask value ANDed with <strong>ref</strong> and the stored stencil value during the test [0x00-0xFF]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Sets the stencil comparison function to use for the given <strong>face</strong> value.</p>
+<p><strong>face</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FACE_FRONT</code></td>
+<td>0</td>
+<td>Configure front face stencil function</td>
+</tr>
+<tr>
+<td><code>FACE_BACK</code></td>
+<td>1</td>
+<td>Configure back face stencil function</td>
+</tr>
+<tr>
+<td><code>FACE_BOTH</code></td>
+<td>2</td>
+<td>Configure front and back face stencil functions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>func</strong> must be one of the following values:</p>
+<p>(<strong>stencil</strong> is the value currently in the stencil buffer when the test is made.)</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FUNC_LESS</code></td>
+<td>0</td>
+<td>Stencil test passes if ( <strong>ref</strong> &amp; <strong>mask</strong> ) &lt; ( <strong>stencil</strong> &amp; <strong>mask</strong> )</td>
+</tr>
+<tr>
+<td><code>FUNC_LEQUAL</code></td>
+<td>1</td>
+<td>Stencil test passes if ( <strong>ref</strong> &amp; <strong>mask</strong> ) &lt;= ( <strong>stencil</strong> &amp; <strong>mask</strong> )</td>
+</tr>
+<tr>
+<td><code>FUNC_GREATER</code></td>
+<td>2</td>
+<td>Stencil test passes if ( <strong>ref</strong> &amp; <strong>mask</strong> ) &gt; ( <strong>stencil</strong> &amp; <strong>mask</strong> )</td>
+</tr>
+<tr>
+<td><code>FUNC_GEQUAL</code></td>
+<td>3</td>
+<td>Stencil test passes if ( <strong>ref</strong> &amp; <strong>mask</strong> ) &gt;= ( <strong>stencil</strong> &amp; <strong>mask</strong> )</td>
+</tr>
+<tr>
+<td><code>FUNC_EQUAL</code></td>
+<td>4</td>
+<td>Stencil test passes if ( <strong>ref</strong> &amp; <strong>mask</strong> ) = ( <strong>stencil</strong> &amp; <strong>mask</strong> )</td>
+</tr>
+<tr>
+<td><code>FUNC_NOTEQUAL</code></td>
+<td>5</td>
+<td>Stencil test passes if ( <strong>ref</strong> &amp; <strong>mask</strong> ) != ( <strong>stencil</strong> &amp; <strong>mask</strong> )</td>
+</tr>
+<tr>
+<td><code>FUNC_ALWAYS</code></td>
+<td>6</td>
+<td>Stencil test always passes</td>
+</tr>
+<tr>
+<td><code>FUNC_NEVER</code></td>
+<td>7</td>
+<td>Stencil test never passes</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="stencilmask"><code>stencilMask</code><a class="headerlink" href="#stencilmask" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">stencilMask</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mask</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">face</span></code>: The face value to configure [0-2]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">mask</span></code>: Mask value used to enable/disable writing to specific bits in the stencil buffer [0x00-0xFF]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Confgures a mask used to enable/disable writing to specific bits in the stencil buffer for the given <strong>face</strong> value.</p>
+<p><strong>face</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FACE_FRONT</code></td>
+<td>0</td>
+<td>Configure front face stencil mask</td>
+</tr>
+<tr>
+<td><code>FACE_BACK</code></td>
+<td>1</td>
+<td>Configure back face stencil mask</td>
+</tr>
+<tr>
+<td><code>FACE_BOTH</code></td>
+<td>2</td>
+<td>Configure front and back face stencil masks</td>
+</tr>
+</tbody>
+</table>
+<p>A mask of <code>0x00</code> will prevent any writing to the stencil buffer.</p>
+<p>A mask of <code>0xFF</code> will allow all writing to the stencil buffer.</p>
 </div>
 <h3 id="stencilmode"><code>stencilMode</code><a class="headerlink" href="#stencilmode" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">stencilMode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">enable</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">enable</span></code>: Stencil testing flag [true/false]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Enables/disables stencil testing.</p>
 </div>
 <h3 id="stencilop"><code>stencilOp</code><a class="headerlink" href="#stencilop" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">stencilOp</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sfail</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dpfail</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dppass</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">face</span></code>: The face value to configure [0-2]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">sfail</span></code>: The operation to perform when the stencil test fails [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">dpfail</span></code>: The operation to perform when the stencil test passes, but the depth test fails [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">dppass</span></code>: The operation to perform when both the stencil test and depth test pass, or the stencil test passes and depth testing is disabled [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Sets the operation to perform on the stencil buffer when the stencil test is performed.</p>
+<p><strong>face</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FACE_FRONT</code></td>
+<td>0</td>
+<td>Configure front face stencil operation</td>
+</tr>
+<tr>
+<td><code>FACE_BACK</code></td>
+<td>1</td>
+<td>Configure back face stencil operation</td>
+</tr>
+<tr>
+<td><code>FACE_BOTH</code></td>
+<td>2</td>
+<td>Configure front and back face stencil operations</td>
+</tr>
+</tbody>
+</table>
+<p><strong>sfail</strong>, <strong>dpfail</strong>, and <strong>dppass</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STENCIL_KEEP</code></td>
+<td>0</td>
+<td>Keeps the current stencil value</td>
+</tr>
+<tr>
+<td><code>STENCIL_REPLACE</code></td>
+<td>1</td>
+<td>Sets the stencil buffer value to <strong>ref</strong>, as specified by <a href="#stencilfunc"><code>stencilFunc()</code></a></td>
+</tr>
+<tr>
+<td><code>STENCIL_INC</code></td>
+<td>2</td>
+<td>Increments the current stencil buffer value, clamps to <code>0xFF</code></td>
+</tr>
+<tr>
+<td><code>STENCIL_INC_WRAP</code></td>
+<td>3</td>
+<td>Increments the current stencil buffer value, wraps around to <code>0</code> when incrementing the value <code>0xFF</code></td>
+</tr>
+<tr>
+<td><code>STENCIL_DEC</code></td>
+<td>4</td>
+<td>Decrements the current stencil buffer value, clamps to <code>0</code></td>
+</tr>
+<tr>
+<td><code>STENCIL_DEC_WRAP</code></td>
+<td>5</td>
+<td>Decrements the current stencil buffer value, wraps around to <code>0xFF</code> when decrementing the value <code>0</code></td>
+</tr>
+<tr>
+<td><code>STENCIL_ZERO</code></td>
+<td>6</td>
+<td>Sets the stencil buffer value to <code>0</code></td>
+</tr>
+<tr>
+<td><code>STENCIL_INVERT</code></td>
+<td>7</td>
+<td>Bitwise inverts the current stencil buffer value</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="texture"><code>texture</code><a class="headerlink" href="#texture" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4946,15 +5256,15 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">texture</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="n">texture</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="p">[</span><span class="mi">0-1023</span><span class="p">]</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="n">texture</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="p">[</span><span class="mi">0-1023</span><span class="p">]</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">texture</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="p">[</span><span class="mi">1-256</span><span class="p">]</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="o">:</span><span class="w"> </span><span class="n">texture</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="p">[</span><span class="mi">1-256</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span></code>: Texture window x position [0-1023]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">y</span></code>: Texture window y position [0-1023]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">width</span></code>: Texture window width [1-256]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">height</span></code>: Texture window height [1-256]</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Changes the window of texture memory to use as the current texture.</p>
 <p>A maximum texture size of 256x256 can be specified.</p>
-<p>Texture uv coordinates will be mapped to the specified texture window.</p>
+<p>Texture UV coordinates will be mapped to the specified texture window.</p>
 </div>
 <h3 id="texturemode"><code>textureMode</code><a class="headerlink" href="#texturemode" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4962,19 +5272,39 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">textureMode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">texture</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="p">[</span><span class="mi">0-2</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">mode</span></code>: The new texture mode to use [0-2]</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Changes the current texture mode setting.</p>
-<p>Mode must be one of the following values:</p>
-<p>0: repeat texture (default)</p>
-<p>1: clamp texture to edges</p>
-<p>2: disable texturing</p>
-<p>Modes 0 and 1 determine whether uvs outside of the 0.0-1.0 range</p>
-<p>Will cause the texture to be repeated accross a surface, or</p>
-<p>If uvs should be clamped to the 0.0-1.0 range.</p>
-<p>Mode 2 will ignore texture pixel colors and output</p>
-<p>Pure white instead. useful when used with vertex colors.</p>
+<p><strong>mode</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TEXTURE_WRAP</code></td>
+<td>0</td>
+<td>Repeat texture (default)</td>
+</tr>
+<tr>
+<td><code>TEXTURE_CLAMP</code></td>
+<td>1</td>
+<td>Clamp texture to edges</td>
+</tr>
+<tr>
+<td><code>TEXTURE_NONE</code></td>
+<td>2</td>
+<td>Disable texturing</td>
+</tr>
+</tbody>
+</table>
+<p>Modes <code>TEXTURE_WRAP</code> and <code>TEXTURE_CLAMP</code> determine whether UVs outside of the 0.0-1.0 range will cause the texture to be repeated accross a surface, or if UVs should be clamped to the 0.0-1.0 range.</p>
+<p>Mode <code>TEXTURE_NONE</code> will ignore texture pixel colors and output pure white instead. useful when used with vertex colors.</p>
 </div>
 <h3 id="translate"><code>translate</code><a class="headerlink" href="#translate" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4982,10 +5312,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">translate</span><span class="p">(</span><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">v</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">translate</span><span class="w"> </span><span class="n">by</span></code></li>
+<li><code class="highlight"><span class="n">vec3</span><span class="w"> </span><span class="n">v</span></code>: The vector to translate by</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Translates the topmost matrix of the current matrix by the 3d vector v.</p>
+<p>Translates the topmost matrix of the current matrix stack by the 3D vector <strong>v</strong>.</p>
 </div>
 <h3 id="viewport"><code>viewport</code><a class="headerlink" href="#viewport" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -4993,9 +5323,9 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">viewport</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span></code>: Viewport screen x position [0-479]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span></code>: Viewport screen x position [0-639]</li>
 <li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">y</span></code>: Viewport screen y position [0-359]</li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">width</span></code>: Viewport width [1-480]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">width</span></code>: Viewport width [1-640]</li>
 <li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">height</span></code>: Viewport height [1-360]</li>
 </ul>
 <p><strong>Description</strong>:</p>
@@ -5006,278 +5336,569 @@ This function always rounds toward negative infinity.</p>
 <h3 id="gettrackbpm"><code>getTrackBPM</code><a class="headerlink" href="#gettrackbpm" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">getTrackBPM</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to query [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns the current BPM value of the given soundchip track.</p>
 </div>
 <h3 id="gettrackpan"><code>getTrackPan</code><a class="headerlink" href="#gettrackpan" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">getTrackPan</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to query [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns the current panning value of the given soundchip track.</p>
 </div>
 <h3 id="gettrackvolume"><code>getTrackVolume</code><a class="headerlink" href="#gettrackvolume" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">getTrackVolume</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to query [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns the current volume of the given soundchip track.</p>
 </div>
 <h3 id="mutetrack"><code>muteTrack</code><a class="headerlink" href="#mutetrack" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">muteTrack</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to mute [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Mutes the given soundchip track.</p>
 </div>
 <h3 id="mutetracks"><code>muteTracks</code><a class="headerlink" href="#mutetracks" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">muteTracks</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span></code>: Bitmask of the tracks to mute</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Mutes the given soundchip tracks.</p>
+<p><strong>track_mask</strong> is an 8-bit bitmask, each bit corresponding to a soundchip track.</p>
+<p>The following table lists the values that map to each track:</p>
+<table>
+<thead>
+<tr>
+<th>Mask Value</th>
+<th>Track Index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary: <code>0b10000000</code> (Decimal: <code>128</code>)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Binary: <code>0b01000000</code> (Decimal: <code>64</code>)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00100000</code> (Decimal: <code>32</code>)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00010000</code> (Decimal: <code>16</code>)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00001000</code> (Decimal: <code>8</code>)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000100</code> (Decimal: <code>4</code>)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000010</code> (Decimal: <code>2</code>)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000001</code> (Decimal: <code>1</code>)</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="pausetrack"><code>pauseTrack</code><a class="headerlink" href="#pausetrack" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">pauseTrack</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to pause [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Pauses the given soundchip track.</p>
 </div>
 <h3 id="pausetracks"><code>pauseTracks</code><a class="headerlink" href="#pausetracks" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">pauseTracks</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span></code>: Bitmask of the tracks to pause</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Pauses the given soundchip tracks.</p>
+<p><strong>track_mask</strong> is an 8-bit bitmask, each bit corresponding to a soundchip track.</p>
+<p>The following table lists the values that map to each track:</p>
+<table>
+<thead>
+<tr>
+<th>Mask Value</th>
+<th>Track Index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary: <code>0b10000000</code> (Decimal: <code>128</code>)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Binary: <code>0b01000000</code> (Decimal: <code>64</code>)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00100000</code> (Decimal: <code>32</code>)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00010000</code> (Decimal: <code>16</code>)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00001000</code> (Decimal: <code>8</code>)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000100</code> (Decimal: <code>4</code>)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000010</code> (Decimal: <code>2</code>)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000001</code> (Decimal: <code>1</code>)</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="playpattern"><code>playPattern</code><a class="headerlink" href="#playpattern" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">playPattern</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pattern</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to play on [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">pattern</span></code>: Index of the pattern to play [0x00-0xFF]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Plays the given sequencer pattern using the given soundchip track.</p>
 </div>
 <h3 id="playsong"><code>playSong</code><a class="headerlink" href="#playsong" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">playSong</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">row</span></code>: Index of the song row to play from [0x00-0xFF]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Plays all tracks starting at the given song row.</p>
 </div>
 <h3 id="playtrack"><code>playTrack</code><a class="headerlink" href="#playtrack" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">playTrack</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to play [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">row</span></code>: Index of the song row to play from [0x00-0xFF]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Plays the given soundchip track starting at the given song row.</p>
 </div>
 <h3 id="playwav"><code>playWav</code><a class="headerlink" href="#playwav" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">playWav</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">note</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">volume</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">loop_mode</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to play on [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">id</span></code>: Index of the WAVMAP entry to play [0-511]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">note</span></code>: Note value to play the wave at</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">volume</span></code>: Volume percentage to play the wave at [0.0-100.0]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">loop_mode</span></code>: Loop mode to use when playing [0-3]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Plays the sound described by a WAVMAP entry.</p>
+<p><strong>loop_mode</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOOP_OFF</code></td>
+<td>0</td>
+<td>Do not loop</td>
+</tr>
+<tr>
+<td><code>LOOP_FORWARD</code></td>
+<td>1</td>
+<td>Loop from the beginning of the wave</td>
+</tr>
+<tr>
+<td><code>LOOP_PINGPONG</code></td>
+<td>2</td>
+<td>Alternate between playing the wave forwards and backwards</td>
+</tr>
+<tr>
+<td><code>LOOP_RANGE</code></td>
+<td>3</td>
+<td>Loop using the sample range specified in the WAVMAP entry</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="playwavex"><code>playWavEx</code><a class="headerlink" href="#playwavex" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">playWavEx</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sample_start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sample_end</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">loop_start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">loop_end</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">note</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">volume</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">loop_mode</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to play on [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">sample_start</span></code>: Index of the WAVMEM sample pair that marks the beginning of the sound [<code>0x000000</code>-<code>0x1BFFFF</code>]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">sample_end</span></code>: Index of the WAVMEM sample pair that marks the end of the sound (inclusive) [<code>0x000000</code>-<code>0x1BFFFF</code>]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">loop_start</span></code>: Index of the WAVMEM sample pair that marks the beginning loop point [<code>0x000000</code>-<code>0x1BFFFF</code>]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">loop_end</span></code>: Index of the WAVMEM sample pair that marks the end loop point (inclusive) [<code>0x000000</code>-<code>0x1BFFFF</code>]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">note</span></code>: Note value to play the wave at (<code>0nC4</code> is the default pitch)</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">volume</span></code>: Volume percentage to play the wave at [0.0-100.0]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">loop_mode</span></code>: Loop mode to use when playing [0-3]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Plays a given range of samples from WAVMEM.</p>
+<p><strong>loop_mode</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOOP_OFF</code></td>
+<td>0</td>
+<td>Do not loop</td>
+</tr>
+<tr>
+<td><code>LOOP_FORWARD</code></td>
+<td>1</td>
+<td>Loop from the beginning of the wave</td>
+</tr>
+<tr>
+<td><code>LOOP_PINGPONG</code></td>
+<td>2</td>
+<td>Alternate between playing the wave forwards and backwards</td>
+</tr>
+<tr>
+<td><code>LOOP_RANGE</code></td>
+<td>3</td>
+<td>Loop using the sample range specified by <strong>loop_start</strong> and <strong>loop_end</strong></td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="resumetrack"><code>resumeTrack</code><a class="headerlink" href="#resumetrack" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">resumeTrack</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to resume [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Resumes the given soundchip track.</p>
 </div>
 <h3 id="resumetracks"><code>resumeTracks</code><a class="headerlink" href="#resumetracks" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">resumeTracks</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span></code>: Bitmask of the tracks to resume</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Resumes the given soundchip tracks.</p>
+<p><strong>track_mask</strong> is an 8-bit bitmask, each bit corresponding to a soundchip track.</p>
+<p>The following table lists the values that map to each track:</p>
+<table>
+<thead>
+<tr>
+<th>Mask Value</th>
+<th>Track Index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary: <code>0b10000000</code> (Decimal: <code>128</code>)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Binary: <code>0b01000000</code> (Decimal: <code>64</code>)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00100000</code> (Decimal: <code>32</code>)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00010000</code> (Decimal: <code>16</code>)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00001000</code> (Decimal: <code>8</code>)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000100</code> (Decimal: <code>4</code>)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000010</code> (Decimal: <code>2</code>)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000001</code> (Decimal: <code>1</code>)</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="settrackbpm"><code>setTrackBPM</code><a class="headerlink" href="#settrackbpm" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is not fully implemented, and will have no effect.</p>
+</div>
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">setTrackBPM</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bpm</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to modify [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bpm</span></code>: New BPM value to play at [1-255]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Sets the BPM value of the given soundchip track.</p>
 </div>
 <h3 id="settrackpan"><code>setTrackPan</code><a class="headerlink" href="#settrackpan" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">setTrackPan</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pan</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to modify [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">pan</span></code>: New panning value to play at [-100-100]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Sets the panning value of the given soundchip track.</p>
 </div>
 <h3 id="settrackvolume"><code>setTrackVolume</code><a class="headerlink" href="#settrackvolume" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">setTrackVolume</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">volume</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to modify [0-7]</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">volume</span></code>: New volume value to play at [0x00-0xFF]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Sets the volume value of the given soundchip track.</p>
 </div>
 <h3 id="stoptrack"><code>stopTrack</code><a class="headerlink" href="#stoptrack" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">stopTrack</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to stop [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Stops the given soundchip track.</p>
 </div>
 <h3 id="stoptracks"><code>stopTracks</code><a class="headerlink" href="#stoptracks" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">stopTracks</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span></code>: Bitmask of the tracks to stop</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Stops the given soundchip tracks.</p>
+<p><strong>track_mask</strong> is an 8-bit bitmask, each bit corresponding to a soundchip track.</p>
+<p>The following table lists the values that map to each track:</p>
+<table>
+<thead>
+<tr>
+<th>Mask Value</th>
+<th>Track Index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary: <code>0b10000000</code> (Decimal: <code>128</code>)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Binary: <code>0b01000000</code> (Decimal: <code>64</code>)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00100000</code> (Decimal: <code>32</code>)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00010000</code> (Decimal: <code>16</code>)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00001000</code> (Decimal: <code>8</code>)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000100</code> (Decimal: <code>4</code>)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000010</code> (Decimal: <code>2</code>)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000001</code> (Decimal: <code>1</code>)</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="unmutetrack"><code>unmuteTrack</code><a class="headerlink" href="#unmutetrack" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">unmuteTrack</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track</span></code>: Index of the track to unmute [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Unmutes the given soundchip track.</p>
 </div>
 <h3 id="unmutetracks"><code>unmuteTracks</code><a class="headerlink" href="#unmutetracks" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">unmuteTracks</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">track_mask</span></code>: Bitmask of the tracks to unmute</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Unmutes the given soundchip tracks.</p>
+<p><strong>track_mask</strong> is an 8-bit bitmask, each bit corresponding to a soundchip track.</p>
+<p>The following table lists the values that map to each track:</p>
+<table>
+<thead>
+<tr>
+<th>Mask Value</th>
+<th>Track Index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary: <code>0b10000000</code> (Decimal: <code>128</code>)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Binary: <code>0b01000000</code> (Decimal: <code>64</code>)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00100000</code> (Decimal: <code>32</code>)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00010000</code> (Decimal: <code>16</code>)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00001000</code> (Decimal: <code>8</code>)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000100</code> (Decimal: <code>4</code>)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000010</code> (Decimal: <code>2</code>)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Binary: <code>0b00000001</code> (Decimal: <code>1</code>)</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h2 id="physics">Physics<a class="headerlink" href="#physics" title="Permanent link">&para;</a></h2>
 <h3 id="collide"><code>collide</code><a class="headerlink" href="#collide" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
+<p><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">collide</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">a</span></code>: Pointer to the first <a href="../era-c-overview/#collision-objects">collision object</a> to test</li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">b</span></code>: Pointer to the second collision object to test</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>...</p>
+<p>Returns <code>true</code> if <strong>a</strong> is colliding with <strong>b</strong>. Otherwise, returns <code>false</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Collision detection is currently only implemented for <code>colaabb</code> vs <code>colaabb</code>.</p>
+</div>
 </div>
 <h3 id="getraycastnormal"><code>getRaycastNormal</code><a class="headerlink" href="#getraycastnormal" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
-</ul>
-<p><strong>Description</strong>:</p>
-<p>...</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is not currently implemented.</p>
 </div>
 <h3 id="getraycastpoint"><code>getRaycastPoint</code><a class="headerlink" href="#getraycastpoint" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
-</ul>
-<p><strong>Description</strong>:</p>
-<p>...</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is not currently implemented.</p>
 </div>
 <h3 id="raycast"><code>raycast</code><a class="headerlink" href="#raycast" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p><strong>Signature</strong>:</p>
-<p><code class="highlight"><span class="p">...</span></code></p>
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li><code class="highlight"><span class="p">...</span></code></li>
-</ul>
-<p><strong>Description</strong>:</p>
-<p>...</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is not currently implemented.</p>
 </div>
 <h2 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
 <h3 id="alloc"><code>alloc</code><a class="headerlink" href="#alloc" title="Permanent link">&para;</a></h3>
@@ -5310,17 +5931,13 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">initMemCard</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">id</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="n">string</span><span class="w"> </span><span class="n">id</span><span class="o">:</span><span class="w"> </span><span class="n">unique</span><span class="w"> </span><span class="n">identifier</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">card</span><span class="w"> </span><span class="n">data</span></code></li>
+<li><code class="highlight"><span class="n">string</span><span class="w"> </span><span class="n">id</span></code>: Unique identifier for memory card data</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Initializes the system's memory card memory range.</p>
-<p>Memory card data is stored in the address range 0x05800000 to 0x05800fff.</p>
-<p>Id is a string used to identify saved memory card data.</p>
-<p>Id must be between 1 and 16 characters long and may only contain</p>
-<p>The characters a-z, a-z, 0-9, and _</p>
-<p>If save data matching the given id exists, it will be loaded.</p>
-<p>Write bytes to the address range 0x05800000 to 0x05800fff to save</p>
-<p>Data to the memory card.</p>
+<p>Initializes the system's <a href="../memory-map/#memory-card">memory card</a> memory range.</p>
+<p><strong>id</strong> is a string used to identify saved memory card data.</p>
+<p><strong>id</strong> must be between 1 and 16 characters long and may only contain the characters <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, and <code>_</code></p>
+<p>If save data matching the given ID exists, it will be loaded.</p>
 </div>
 <h3 id="loadobjbank"><code>loadObjBank</code><a class="headerlink" href="#loadobjbank" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -5328,12 +5945,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">loadObjBank</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bank</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bank</span><span class="o">:</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">bank</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="p">[</span><span class="mi">0-3</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bank</span></code>: Index of the object bank to load [0-3]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Loads an object bank from the cartridge into system memory.</p>
-<p>System object data is stored in the address range</p>
-<p>0x00c00000 to 0x00f5ffff.</p>
+<p>Loads an <a href="../memory-map/#objbanks">OBJBANK</a> from the cartridge into <a href="../memory-map/#objmem">OBJMEM</a>.</p>
 </div>
 <h3 id="loadseqbank"><code>loadSeqBank</code><a class="headerlink" href="#loadseqbank" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -5341,12 +5956,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">loadSeqBank</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bank</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bank</span><span class="o">:</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sequencer</span><span class="w"> </span><span class="n">bank</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="p">[</span><span class="mi">0-7</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bank</span></code>: Index of the sequencer bank to load [0-7]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Loads a sequencer bank from the cartridge into system memory.</p>
-<p>System sequencer data is stored in the address range</p>
-<p>0x01700000 to 0x0173ffff.</p>
+<p>Loads a <a href="../memory-map/#seqbanks">SEQBANK</a> from the cartridge into <a href="../memory-map/#seqmem">SEQMEM</a>.</p>
 </div>
 <h3 id="loadtexbank"><code>loadTexBank</code><a class="headerlink" href="#loadtexbank" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -5354,12 +5967,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">loadTexBank</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bank</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bank</span><span class="o">:</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">texture</span><span class="w"> </span><span class="n">bank</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="p">[</span><span class="mi">0-3</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bank</span></code>: Index of the texture bank to load [0-3]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Loads a texture bank from the cartridge into system memory.</p>
-<p>System texture data is stored in the address range</p>
-<p>0x00800000 to 0x00bfffff.</p>
+<p>Loads a <a href="../memory-map/#texbanks">TEXBANK</a> from the cartridge into <a href="../memory-map/#texmem">TEXMEM</a>.</p>
 </div>
 <h3 id="loadwavbank"><code>loadWavBank</code><a class="headerlink" href="#loadwavbank" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -5367,12 +5978,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">loadWavBank</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bank</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bank</span><span class="o">:</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">wave</span><span class="w"> </span><span class="n">bank</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="p">[</span><span class="mi">0-1</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">bank</span></code>: Index of the wave bank to load [0-1]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Loads a wave bank from the cartridge into system memory.</p>
-<p>System wave data is stored in the address range</p>
-<p>0x01000000 to 0x016fffff.</p>
+<p>Loads a <a href="../memory-map/#wavbanks">WAVBANK</a> from the cartridge into <a href="../memory-map/#wavmem">WAVMEM</a>.</p>
 </div>
 <h3 id="memcpy"><code>memcpy</code><a class="headerlink" href="#memcpy" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -5380,13 +5989,13 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">memcpy</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">destination</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">destination</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">to</span></code></li>
-<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">source</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">read</span><span class="w"> </span><span class="n">from</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w">            </span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">read</span></code></li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">destination</span></code>: The memory address to write to</li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">source</span></code>: The memory address to read from</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">n</span></code>: The amount of bytes to read</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Copies n bytes from source to destination.</p>
-<p>Source and destination buffers may safely overlap.</p>
+<p>Copies <strong>n</strong> bytes from <strong>source</strong> to <strong>destination</strong>.</p>
+<p><strong>source</strong> and <strong>destination</strong> buffers may safely overlap.</p>
 </div>
 <h3 id="memset"><code>memset</code><a class="headerlink" href="#memset" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -5394,13 +6003,12 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">memset</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">destination</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">destination</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">to</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w">            </span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">write</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">byte</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">write</span></code></li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">destination</span></code>: The memory address to write to</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">n</span></code>: The amount of bytes to write</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">value</span></code>: Byte value to write [0-255]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Copies the given byte value to the first n bytes</p>
-<p>Starting at the destination address.</p>
+<p>Copies the given byte <strong>value</strong> to the first <strong>n</strong> bytes starting at <strong>destination</strong>.</p>
 </div>
 <h3 id="peek8"><code>peek8</code><a class="headerlink" href="#peek8" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -5408,7 +6016,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">peek8</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="o">:</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">read</span><span class="w"> </span><span class="n">from</span></code></li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span></code>: Memory address to read from</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Returns the value of the byte at the given memory address.</p>
@@ -5419,7 +6027,7 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">peek32</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="o">:</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">read</span><span class="w"> </span><span class="n">from</span></code></li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span></code>: Memory address to read from</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Returns the 32-bit integer value starting at the given memory address.</p>
@@ -5430,8 +6038,8 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">poke8</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="o">:</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">to</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">byte</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">write</span></code></li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span></code>: Memory address to write to</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">value</span></code>: Byte value to write [0-255]</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Writes the given byte to the given memory address.</p>
@@ -5442,8 +6050,8 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">poke32</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="o">:</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">to</span></code></li>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="mi">32</span><span class="o">-</span><span class="n">bit</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">write</span></code></li>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span></code>: Memory address to write to</li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">value</span></code>: 32-bit integer value to write</li>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Writes the 32-bit integer to the given memory address.</p>
@@ -5511,11 +6119,10 @@ This function always rounds toward negative infinity.</p>
 <p><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">vargv</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">offset</span><span class="p">)</span></code></p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">offset</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">advance</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">vararg</span><span class="w"> </span><span class="n">pointer</span></code></li>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">offset</span></code>: The number of bytes to advance the vararg pointer</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Returns a pointer to the current vararg argument and advances the</p>
-<p>Vararg pointer by $offset bytes.</p>
+<p>Returns a pointer to the current vararg argument and advances the vararg pointer by $offset bytes.</p>
 <p>Must only be called from a vararg function.</p>
 </div>
 
