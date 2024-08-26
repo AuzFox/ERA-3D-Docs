@@ -1749,6 +1749,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#matrixmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      matrixMode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#meshcolor" class="md-nav__link">
     <span class="md-ellipsis">
       meshColor
@@ -4698,6 +4707,39 @@ This function always rounds toward negative infinity.</p>
 </ul>
 <p><strong>Description</strong>:</p>
 <p>Configures the topmost matrix of the current matrix stack to a view matrix describing a view from <strong>eye</strong> looking at <strong>target</strong> with an up vector of <strong>up</strong>.</p>
+</div>
+<h3 id="matrixmode"><code>matrixMode</code><a class="headerlink" href="#matrixmode" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p><strong>Signature</strong>:</p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">matrixMode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span></code></p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">index</span></code>: Index of the matrix stack to use. [0-1]</li>
+</ul>
+<p><strong>Description</strong>:</p>
+<p>Changes the current matrix stack used for matrix stack functions such as <code>pushMatrix()</code>, <code>popMatrix()</code>, <code>translate()</code>, etc.</p>
+<p><strong>index</strong> must be one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MAT_PROJECTION</code></td>
+<td>0</td>
+<td>Switch to projection matrix stack</td>
+</tr>
+<tr>
+<td><code>MAT_MODELVIEW</code></td>
+<td>1</td>
+<td>Switch to model-view matrix stack</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="meshcolor"><code>meshColor</code><a class="headerlink" href="#meshcolor" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
