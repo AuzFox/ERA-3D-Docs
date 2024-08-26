@@ -496,9 +496,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#controls" class="md-nav__link">
+  <a href="#code-editor-controls" class="md-nav__link">
     <span class="md-ellipsis">
-      Controls
+      Code Editor Controls
     </span>
   </a>
   
@@ -515,6 +515,48 @@
       Audio Sequencer (Tracker)
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Audio Sequencer (Tracker)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-tracker-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Tracker Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#song-view-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Song View Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-view-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern View Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrument-view-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrument View Controls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -538,9 +580,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#controls_1" class="md-nav__link">
+  <a href="#texture-editor-controls" class="md-nav__link">
     <span class="md-ellipsis">
-      Controls
+      Texture Editor Controls
     </span>
   </a>
   
@@ -562,9 +604,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#controls_2" class="md-nav__link">
+  <a href="#console-controls" class="md-nav__link">
     <span class="md-ellipsis">
-      Controls
+      Console Controls
     </span>
   </a>
   
@@ -708,7 +750,11 @@
 
 <h1 id="user-guide">User Guide<a class="headerlink" href="#user-guide" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>...</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The asset editors built into ERA-3D are still in early development, and are missing important functionality.</p>
+<p>It is currently recommended to use external editors for creating assets like textures and 3D models.</p>
+</div>
 <h2 id="general-controls">General Controls<a class="headerlink" href="#general-controls" title="Permanent link">&para;</a></h2>
 <p>The following keyboard shortcuts are always available, except while an asset import dialog or the console is open:</p>
 <ul>
@@ -720,10 +766,10 @@
 <li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-s">S</kbd></span>: Save cart as</li>
 </ul>
 <h2 id="editor-screens">Editor Screens<a class="headerlink" href="#editor-screens" title="Permanent link">&para;</a></h2>
-<p>...</p>
+<p>TODO</p>
 <h3 id="code-editor">Code Editor<a class="headerlink" href="#code-editor" title="Permanent link">&para;</a></h3>
-<p>...</p>
-<h4 id="controls">Controls<a class="headerlink" href="#controls" title="Permanent link">&para;</a></h4>
+<p>This screen is where the ERA-C code for the current cart is written.</p>
+<h4 id="code-editor-controls">Code Editor Controls<a class="headerlink" href="#code-editor-controls" title="Permanent link">&para;</a></h4>
 <ul>
 <li><span class="keys"><kbd class="key-arrow-left">Left</kbd></span> / <span class="keys"><kbd class="key-arrow-right">Right</kbd></span> / <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> / <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>: Move cursor</li>
 <li><span class="keys"><kbd class="key-home">Home</kbd></span>: Move cursor to the beginning of the line</li>
@@ -734,28 +780,54 @@
 <li><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-arrow-down">Down</kbd></span>: Move line down</li>
 <li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-d">D</kbd></span>: Duplicate line</li>
 <li><span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span>: Deindent line</li>
-<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-i">I</kbd></span>: Import code text file (current code is discarded!)</li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-i">I</kbd></span>: Import code text file (current code is replaced!)</li>
 </ul>
 <h3 id="audio-sequencer-tracker">Audio Sequencer (Tracker)<a class="headerlink" href="#audio-sequencer-tracker" title="Permanent link">&para;</a></h3>
-<p>...</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Many important features of the Tracker have not been implemented yet.</p>
+</div>
+<p>The Audio Sequencer allows audio samples stored on the cartridge to be sequenced and played back by the soundchip.</p>
+<h4 id="general-tracker-controls">General Tracker Controls<a class="headerlink" href="#general-tracker-controls" title="Permanent link">&para;</a></h4>
+<ul>
+<li><span class="keys"><kbd class="key-arrow-left">Left</kbd></span> / <span class="keys"><kbd class="key-arrow-right">Right</kbd></span> / <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> / <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>: Move cursor</li>
+<li><span class="keys"><kbd class="key-tab">Tab</kbd></span>: Move cursor to next track</li>
+<li><span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span>: Move cursor to previous track</li>
+<li><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-arrow-up">Up</kbd></span> / <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>: Switch views</li>
+<li><span class="keys"><kbd class="key-space">Space</kbd></span>: Play/stop song</li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-i">I</kbd></span> Import an audio file (<code>.wav</code>) into the selected <a href="../memory-map/#wavbanks">WAVBANK</a></li>
+</ul>
+<h4 id="song-view-controls">Song View Controls<a class="headerlink" href="#song-view-controls" title="Permanent link">&para;</a></h4>
+<ul>
+<li><span class="keys"><kbd class="key-0">0</kbd></span>-<span class="keys"><kbd class="key-9">9</kbd></span>, <span class="keys"><kbd class="key-a">A</kbd></span>-<span class="keys"><kbd class="key-f">F</kbd></span>: Change pattern hex value</li>
+</ul>
+<h4 id="pattern-view-controls">Pattern View Controls<a class="headerlink" href="#pattern-view-controls" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h4 id="instrument-view-controls">Instrument View Controls<a class="headerlink" href="#instrument-view-controls" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
 <h3 id="model-editor">Model Editor<a class="headerlink" href="#model-editor" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The Model Editor has not been implemented yet.</p>
-<p>However, on the Model Editor screen, you can press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-i">I</kbd></span> to import a 3D model file (<code>.obj</code>, <code>.gltf/glb</code>).</p>
+<p>However, on the Model Editor screen, you can press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-i">I</kbd></span> to import a 3D model file (<code>.obj</code>, <code>.gltf/glb</code>) into <a href="../memory-map/#objbanks">OBJBANK 0</a>.</p>
 </div>
+<p>TODO</p>
 <h3 id="texture-editor">Texture Editor<a class="headerlink" href="#texture-editor" title="Permanent link">&para;</a></h3>
-<p>...</p>
-<h4 id="controls_1">Controls<a class="headerlink" href="#controls_1" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h4 id="texture-editor-controls">Texture Editor Controls<a class="headerlink" href="#texture-editor-controls" title="Permanent link">&para;</a></h4>
 <ul>
-<li><span class="keys"><kbd>Left Click</kbd><span>+</span><kbd>Drag</kbd></span>: </li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-i">I</kbd></span> Import an image file (<code>.png</code>) into the selected <a href="../memory-map/#texbanks">TEXBANK</a> (the image being imported MUST be 1024x1024!)</li>
 </ul>
 <h3 id="console">Console<a class="headerlink" href="#console" title="Permanent link">&para;</a></h3>
-<p>...</p>
-<h4 id="controls_2">Controls<a class="headerlink" href="#controls_2" title="Permanent link">&para;</a></h4>
+<p>The console allows the user to run commands to configure ERA-3D's settings, as well as view API documentation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The API documentation accessed using the console is not up-to-date with the online version.</p>
+<p>For now, it is recommended to use the <a href="../api-reference/">API Reference page</a> instead.</p>
+</div>
+<h4 id="console-controls">Console Controls<a class="headerlink" href="#console-controls" title="Permanent link">&para;</a></h4>
 <ul>
-<li><span class="keys"><kbd class="key-arrow-up">Up</kbd></span> / <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>: Navigate command history</li>
-<li><span class="keys"><kbd class="key-enter">Enter</kbd></span>: Run command</li>
+<li><span class="keys"><kbd class="key-enter">Enter</kbd></span>: Run command`</li>
 </ul>
 
 
