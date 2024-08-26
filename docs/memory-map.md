@@ -51,10 +51,9 @@ Accessible using constant `MEMORY_HEAP`. (Or using an address of 0.)
 
 The heap is an 8MiB block of general-purpose RAM that can be used in any way the user sees fit.
 
-!!! warning
-	At the moment, heap memory must be managed entirely by the user.
+The [`alloc()`](api-reference.md/#alloc), [`realloc()`](api-reference.md/#realloc), and [`free()`](api-reference.md/#free) API functions can be used to allocate and deallocate memory blocks in the heap for dynamic memory management.
 
-	Heap allocation functions such as `alloc()`, `realloc()` and `free()` are planned.
+Alternatively, the user may choose to manage the heap manually.
 
 ### `TEXMEM`
 

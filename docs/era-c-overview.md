@@ -821,35 +821,38 @@ Name | Value
 `MEMORY_WAVMEM` | `0x01000000`
 `MEMORY_SEQMEM` | `0x01700000`
 `MEMORY_TEXBANK0` | `0x01800000`
-`MEMORY_TEXBANK1` | `0x????????`
-`MEMORY_TEXBANK2` | `0x????????`
-`MEMORY_TEXBANK3` | `0x????????`
+`MEMORY_TEXBANK1` | `0x01C00000`
+`MEMORY_TEXBANK2` | `0x02000000`
+`MEMORY_TEXBANK3` | `0x02400000`
 `MEMORY_OBJBANK0` | `0x02800000`
-`MEMORY_OBJBANK1` | `0x????????`
-`MEMORY_OBJBANK2` | `0x????????`
-`MEMORY_OBJBANK3` | `0x????????`
+`MEMORY_OBJBANK1` | `0x02B60000`
+`MEMORY_OBJBANK2` | `0x02EC0000`
+`MEMORY_OBJBANK3` | `0x03220000`
 `MEMORY_OMPBANK0` | `0x03580000`
-`MEMORY_OMPBANK1` | `0x????????`
-`MEMORY_OMPBANK2` | `0x????????`
-`MEMORY_OMPBANK3` | `0x????????`
+`MEMORY_OMPBANK1` | `0x03581800`
+`MEMORY_OMPBANK2` | `0x03583000`
+`MEMORY_OMPBANK3` | `0x03584800`
 `MEMORY_WMPBANK0` | `0x036C0000`
-`MEMORY_WMPBANK1` | `0x????????`
+`MEMORY_WMPBANK1` | `0x036C2000`
 `MEMORY_WAVBANK0` | `0x03800000`
-`MEMORY_WAVBANK1` | `0x????????`
+`MEMORY_WAVBANK1` | `0x03F00000`
 `MEMORY_SEQBANK0` | `0x04600000`
-`MEMORY_SEQBANK1` | `0x????????`
-`MEMORY_SEQBANK2` | `0x????????`
-`MEMORY_SEQBANK3` | `0x????????`
-`MEMORY_SEQBANK4` | `0x????????`
-`MEMORY_SEQBANK5` | `0x????????`
-`MEMORY_SEQBANK6` | `0x????????`
-`MEMORY_SEQBANK7` | `0x????????`
+`MEMORY_SEQBANK1` | `0x04640000`
+`MEMORY_SEQBANK2` | `0x04680000`
+`MEMORY_SEQBANK3` | `0x046C0000`
+`MEMORY_SEQBANK4` | `0x04700000`
+`MEMORY_SEQBANK5` | `0x04740000`
+`MEMORY_SEQBANK6` | `0x04780000`
+`MEMORY_SEQBANK7` | `0x047C0000`
 `MEMORY_ROM` | `0x04800000`
 `MEMORY_MEMCARD` | `0x05800000`
 `MESH_LINES` | `0`
 `MESH_TRIANGLES` | `1`
 `MESH_QUADS` | `2`
-`SCREEN_WIDTH` | `480`
+`POLY_POINT` | `0`
+`POLY_LINE` | `1`
+`POLY_FILL` | `2`
+`SCREEN_WIDTH` | `640`
 `SCREEN_HEIGHT` | `360`
 `STENCIL_KEEP` | `0`
 `STENCIL_REPLACE` | `1`
@@ -875,10 +878,10 @@ TODO: explain member ordering
 
 ```C
 struct matrix {
-  float m0; float m4; float m8; float m12;  // first row
-  float m1; float m5; float m9; float m13;  // second row
-  float m2; float m6; float m10; float m14; // third row
-  float m3; float m7; float m11; float m15; // fourth row
+  float scale_x;  float shear_yx; float shear_zx; float translate_x; // first row
+  float shear_xy; float scale_y;  float shear_zy; float translate_y; // second row
+  float shear_xz; float shear_yz; float scale_z;  float translate_z; // third row
+  float wx;       float wy;       float wz;       float ww;          // fourth row
 };
 ```
 
@@ -992,6 +995,12 @@ ERA-3D has built-in API functions for 3D collision detection. These API function
 
 Each collision object struct contains a `type` integer member that must be set to the correct ID value in order for the collision functions to properly identify them.
 
+The compiler will automatically initialize the `type` member of a collision object struct to the correct ID when the struct is created, and does not need to be explicitly set by the user.
+
+```C
+colaabb hitbox = colaabb(vec3(), 1.0, 1.0, 1.0); // the value for type is excluded and implicitly set
+```
+
 The following table lists all collision object IDs:
 
 ID | Collision Object Struct
@@ -1002,13 +1011,13 @@ ID | Collision Object Struct
 `3` | `colcylinder`
 `4` | `coltriangle`
 
-To check for collisions using these structs, use the `checkCollision()` API function.
+To check for collisions using these structs, use the [`collide()`](api-reference.md#collide) API function.
 
 ```C
-colaabb box1 = colaabb(1, vec3(), 1.0, 0.5, 1.0);
-colaabb box2 = colaabb(1, vec3(), 0.5, 1.0, 0.5);
+colaabb box1 = colaabb(vec3(), 1.0, 0.5, 1.0);
+colaabb box2 = colaabb(vec3(), 0.5, 1.0, 0.5);
 
-if (checkCollision(&box1, &box2)) {
+if (collide(&box1, &box2)) {
   // box1 and box2 are colliding!
   // handle collision here...
 }

@@ -36,6 +36,9 @@ Setting | Accepted Values | Default Value | Description
 `vsync` | `true`/`false` | `true` | VSYNC enable flag
 `highdpi` | `true`/`false` | `true` | HIGHDPI enable flag
 `draw_fps` | `true`/`false` | `false` | Debug FPS counter display flag
+`crt_blur` | `true`/`false` | `true` | CRT blur effect flag
+`crt_noise` | `true`/`false` | `true` | CRT static/noise effect flag
+`crt_scanlines` | `true`/`false` | `true` | CRT scanline effect flag
 
 The following table lists the possible values for the `log_level` setting.
 

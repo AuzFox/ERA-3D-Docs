@@ -1140,15 +1140,16 @@ You can also use the search bar in the site header to search for a particular fu
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixAdd(matrix a, matrix b)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c matrix a`: The first matrix to add
+	- `#!c matrix b`: The second matrix to add
 	
 	__Description__:
 
-	...
+	Returns a matrix that is the result of __a__ + __b__.
 
 ### `matrixIdentity`
 
@@ -1161,125 +1162,172 @@ You can also use the search bar in the site header to search for a particular fu
 
 	Returns an identity matrix. (a matrix with no transformations applied)
 
+	An identity matrix can be constructed as follows:
+
+	```C
+	matrix(
+		1.0, 0.0, 0.0, 0.0,
+		0.0, 1.0, 0.0, 0.0,
+		0.0, 0.0, 1.0, 0.0,
+		0.0, 0.0, 0.0, 1.0
+	)
+	```
+
 ### `matrixInvert`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixInvert(matrix m)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c matrix m`: The matrix to invert
 	
 	__Description__:
 
-	...
+	Returns the inverse matrix of __m__.
+
+	An inverted matrix multiplied by the original will result in an identity matrix.
 
 ### `matrixLookAt`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixLookAt(vec3 eye, vec3 target, vec3 up)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c vec3 eye`: Eye position
+	- `#!c vec3 target`: Target position
+	- `#!c vec3 up`: Up vector
 	
 	__Description__:
 
-	...
+	Returns a matrix describing a view from __eye__ looking at __target__ with an up vector of __up__.
 
 ### `matrixMultiply`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixMultiply(matrix a, matrix b)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c matrix a`: The first matrix to multiply
+	- `#!c matrix b`: The second matrix to multiply
 	
 	__Description__:
 
-	...
+	Returns a matrix that is the result of __a__ * __b__.
+
+	!!! info
+		The order of matrices being multiplied is important, as __a__ * __b__ != __b__ * __a__.
 
 ### `matrixRotate`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixRotate(matrix m, vec3 rotation)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c matrix m`: Input matrix
+	- `#!c vec3 rotation`: Rotation vector
 	
 	__Description__:
 
-	...
+	Returns the result of a combined ZYX rotation matrix multiplied by __m__.
 
 ### `matrixScale`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixScale(matrix m, vec3 scale)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c matrix m`: Input matrix
+	- `#!c vec3 scale`: Scale vector
 	
 	__Description__:
 
-	...
+	Returns the result of a XYZ scale matrix multiplied by __m__.
 
 ### `matrixSubtract`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixSubtract(matrix a, matrix b)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c matrix a`: The first matrix to subtract
+	- `#!c matrix b`: The second matrix to subtract
 	
 	__Description__:
 
-	...
+	Returns a matrix that is the result of __a__ - __b__.
 
 ### `matrixTranslate`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixTranslate(matrix m, vec3 translation)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c matrix m`: Input matrix
+	- `#!c vec3 translation`: Translation vector
 	
 	__Description__:
 
-	...
+	Returns the result of a XYZ translation matrix multiplied by __m__.
 
 ### `matrixTranspose`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c matrix matrixTranspose(matrix m)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c matrix m`: The matrix to transpose
 	
 	__Description__:
 
-	...
+	Returns the transposed matrix of __m__.
+
+	A transposed matrix is a matrix where its rows have been replaced by its columns.
+
+	For example, transposing the input matrix
+
+	```C
+	matrix(
+		0, 4, 8 , 12,
+		1, 5, 9 , 13,
+		2, 6, 10, 14,
+		3, 7, 11, 15
+	)
+	```
+
+	returns the matrix
+
+	```C
+	matrix(
+		0 , 1 , 2 , 3 ,
+		4 , 5 , 6 , 7 ,
+		8 , 9 , 10, 11,
+		12, 13, 14, 15
+	)
+	```
 
 ## Input
 
@@ -1572,13 +1620,13 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int lock`: Lock setting [true/false]
+	- `#!c int lock`: Mouse lock flag [true/false]
 	
 	__Description__:
 
-	If lock is true, hides and locks the mouse to the screen.
+	If __lock__ is true, hides and locks the mouse to the screen.
 
-	If lock is false, shows and unlocks the mouse.
+	If __lock__ is false, shows and unlocks the mouse.
 
 ## Graphics
 
@@ -1980,30 +2028,42 @@ You can also use the search bar in the site header to search for a particular fu
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void drawObj(int entry)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int entry`: `OBJMAP` entry to draw [0-511]
 	
 	__Description__:
 
-	...
+	Renders the mesh defined by the `OBJMAP` entry at the index __entry__.
+
+	If the `OBJMAP` entry is configured to point to collision data, it will not be rendered.
 
 ### `drawObjEx`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void drawObjEx(int primitive, int start, int n)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int primitive`: The type of primitve to construct [0-2]
+	- `#!c int start`: The index of the first vertex in `OBJMEM` to draw [0-98303]
+	- `#!c int n`: The number of primitives to draw
 	
 	__Description__:
 
-	...
+	Renders mesh data in `OBJMEM` according to the given parameters.
+
+	__primitive__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`MESH_LINES` | 0 | Construct line primitives (2 vertices each)
+	`MESH_TRIANGLES` | 1 | Construct triangle primitives (3 vertices each)
+	`MESH_QUADS` | 2 | Construct quad primitives (4 vertices each)
 
 ### `endMesh`
 
@@ -2027,15 +2087,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int color: the fog color to use (RGBA32 format)`
+	- `#!c int color`: The fog color to use (RGBA32 format)
 	
 	__Description__:
 
 	Sets the current fog tint color.
-
-	
-
-	See fogmode().
 
 ### `fogEnd`
 
@@ -2046,47 +2102,36 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c float end: the distance from the camera where the`
-	- `#!c fog ends. [0.0-1000.0]`
+	- `#!c float end`: The distance from the camera where the fog ends. [0.0-1000.0]
 	
 	__Description__:
 
 	Sets the fog end distance setting.
-
-	
-
-	See fogmode().
 
 ### `fogMode`
 
 !!! info ""
 	__Signature__:
 
-	`#!c void fogMode(int mode)`
+	`#!c void fogMode(int enable)`
 
 	__Arguments__:
 
-	- `#!c int mode: the fog mode to use [true/false]`
+	- `#!c int enable`: Fog enable flag [true/false]
 	
 	__Description__:
 
 	Enables/disables fog.
 
-	
-
-	If mode is true, fog rendering will be enabled.
+	If __enable__ is true, fog rendering will be enabled.
 
 	Otherwise, fog rendering will be disabled.
-
-	
 
 	Fog is rendered by fading the color of geometry to the set fog color.
 
 	The fog start setting determines how far from the camera the fade begins.
 
-	The fog end setting is the distance from the camera where objects
-
-	Will be fully tinted to the fog color.
+	The fog end setting is the distance from the camera where objects will be fully tinted to the fog color.
 
 ### `fogStart`
 
@@ -2097,31 +2142,31 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c float start: the distance from the camera to start`
-	- `#!c rendering fog. [0.0-1000.0]`
+	- `#!c float start`: The distance from the camera to start rendering fog. [0.0-1000.0]
 	
 	__Description__:
 
 	Sets the fog starting distance setting.
-
-	
-
-	See fogmode().
 
 ### `frustum`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void frustum(float left, float right, float bottom, float top, float near, float far)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c float left`: Minimum X coordinate of the near clipping plane
+	- `#!c float right`: Maximum X coordinate of the near clipping plane
+	- `#!c float bottom`: Minimum Y coordinate of the near clipping plane
+	- `#!c float top`: Maximum Y coordinate of the near clipping plane
+	- `#!c float near`: Near clipping plane distance
+	- `#!c float far`: Far clipping plane distance
 	
 	__Description__:
 
-	...
+	Configures the topmost matrix of the current matrix stack to a projection matrix describing a camera frustum (perpective projection).
 
 ### `getCam2D`
 
@@ -2132,11 +2177,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int camera: index of the 2D camera to get [0-3]`
+	- `#!c int camera`: Index of the 2D camera to get [0-3]
 	
 	__Description__:
 
-	Returns a pointer to the given 2d camera.
+	Returns a pointer to the given 2D camera.
 
 ### `getCam3D`
 
@@ -2147,11 +2192,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int camera: index of the 3D camera to get [0-3]`
+	- `#!c int camera`: Index of the 3D camera to get [0-3]
 	
 	__Description__:
 
-	Returns a pointer to the given 3d camera.
+	Returns a pointer to the given 3D camera.
 
 ### `getLight`
 
@@ -2162,7 +2207,7 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int light: index of the light to get [0-7]`
+	- `#!c int light`: Index of the light to get [0-7]
 	
 	__Description__:
 
@@ -2223,46 +2268,40 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int mode: the lighting mode to use [true/false]`
+	- `#!c int mode`: Lighting mode flag [true/false]
 	
 	__Description__:
 
 	Enables/disables vertex lighting.
 
-	
-
-	If mode is true, lighting will be enabled.
+	If __mode__ is true, lighting will be enabled.
 
 	Otherwise, lighting will be disabled.
 
-	
-
 	Vertex lighting changes vertex colors to simulate lighting.
 
-	When lighting is enabled, meshcolor() calls will be ignored.
-
-	
+	When lighting is enabled, `meshcolor()` calls will be ignored.
 
 	Ambient lighting is also calculated when lighting is enabled.
 
-	Ambient lighting is a form of light that every object
-
-	Recieves equally.
+	Ambient lighting is a form of light that every object recieves equally.
 
 ### `lookAt`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void lookAt(vec3 eye, vec3 target, vec3 up)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c vec3 eye`: Eye position
+	- `#!c vec3 target`: Target position
+	- `#!c vec3 up`: Up vector
 	
 	__Description__:
 
-	...
+	Configures the topmost matrix of the current matrix stack to a view matrix describing a view from __eye__ looking at __target__ with an up vector of __up__.
 
 ### `meshColor`
 
@@ -2273,27 +2312,19 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int color: the color to use for the current vertex (RGBA32 format)`
+	- `#!c int color`: The color to use for the current vertex (RGBA32 format)
 	
 	__Description__:
 
 	Submits the tint color for the current mesh vertex.
 
-	
 
-	Vertex colors can be used to tint the texture of a mesh.
 
-	The colors of each vertex are blended across the mesh surface.
+	Vertex colors can be used to tint the texture of a mesh, the colors of each vertex are blended across the mesh surface.
 
-	
+	Vertex colors are multiplied with texture pixel colors, so a vertex color of pure white will result in the original pixel color.
 
-	Vertex colors are multiplied with texture pixel colors,
 
-	So a vertex color of pure white will result in the
-
-	Original pixel color.
-
-	
 
 	If lighting is enabled, this function does nothing.
 
@@ -2306,25 +2337,23 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c vec3 normal: the 3D normal vector to use for the current vertex`
+	- `#!c vec3 normal`: The 3D normal vector to use for the current vertex
 	
 	__Description__:
 
-	Submits the 3d normal vector for the current mesh vertex.
+	Submits the 3D normal vector for the current mesh vertex.
 
-	The vector must be normalized. (normal must have a length of 1)
+	The vector must be normalized. (__normal__ must have a length of 1)
 
-	
+
 
 	Normal vectors are used when calculating lighting.
 
-	A vertex with a normal vector pointing toward a light will recieve more
+	A vertex with a normal vector pointing toward a light will recieve more light than one with a normal vector pointing away from the light.
 
-	Light than one with a normal vector pointing away from the light.
 
-	
 
-	If lighting is not enabled, this function does nothing.
+	If lighting is disabled, this function does nothing.
 
 ### `meshUV`
 
@@ -2335,25 +2364,23 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c vec2 uv: the 2D texture coordinates to use for the current vertex`
+	- `#!c vec2 uv`: The 2D texture coordinates to use for the current vertex
 	
 	__Description__:
 
-	Submits the 2d texture coordinates for the current mesh vertex.
+	Submits the 2D texture coordinates for the current mesh vertex.
 
 	
 
-	(0.0, 0.0) corresponds to the top-left corner of the texture.
+	`(0.0, 0.0)` corresponds to the top-left corner of the texture.
 
-	(1.0, 1.0) corresponds to the bottom-right corner of the texture.
+	`(1.0, 1.0)` corresponds to the bottom-right corner of the texture.
 
 	
 
-	The normal range for uv coordinates is (0.0, 0.0) to (1.0, 1.0),
+	The normal range for uv coordinates is `(0.0, 0.0)` to `(1.0, 1.0)`,
 
-	Values outside the 0.0-1.0 range will be treated differently
-
-	Depending on the current texture mode. (see settexturemode())
+	Values outside the `0.0`-`1.0` range will be treated differently depending on the current texture mode. (see textureMode())
 
 ### `meshVertex`
 
@@ -2364,13 +2391,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c vec3 v: the 3D coordinates to use for the current vertex`
+	- `#!c vec3 v`: The 3D coordinates to use for the current vertex
 	
 	__Description__:
 
-	Submits the 3d coordinates for the current mesh vertex and
-
-	Finalizes the vertex.
+	Submits the 3D coordinates for the current mesh vertex and finalizes the vertex.
 
 	
 
@@ -2387,13 +2412,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c vec2 v: the 2D screen coordinates to use for the current vertex`
+	- `#!c vec2 v`: The 2D screen coordinates to use for the current vertex
 	
 	__Description__:
 
-	Submits the 2d coordinates for the current mesh vertex and
-
-	Finalizes the vertex.
+	Submits the 2D coordinates for the current mesh vertex and finalizes the vertex.
 
 	
 
@@ -2410,7 +2433,7 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c matrix m: the matrix to multiply by`
+	- `#!c matrix m`: The matrix to multiply by
 	
 	__Description__:
 
@@ -2421,30 +2444,43 @@ You can also use the search bar in the site header to search for a particular fu
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void ortho(float left, float right, float bottom, float top, float near, float far)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c float left`: Minimum X coordinate of the near clipping plane
+	- `#!c float right`: Maximum X coordinate of the near clipping plane
+	- `#!c float bottom`: Minimum Y coordinate of the near clipping plane
+	- `#!c float top`: Maximum Y coordinate of the near clipping plane
+	- `#!c float near`: Near clipping plane distance
+	- `#!c float far`: Far clipping plane distance
 	
 	__Description__:
 
-	...
+	Configures the topmost matrix of the current matrix stack to a projection matrix describing an orthographic projection.
 
 ### `polygonMode`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void polygonMode(int mode)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int mode`: The new polygon mode to use [0-2]
 	
 	__Description__:
 
-	...
+	Sets the polygon fill mode.
+
+	__mode__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`POLY_POINT` | 0 | Draw only polygon vertices as points
+	`POLY_LINE` | 1 | Draw polygons as wireframes
+	`POLY_FILL` | 2 | Draw filled polygons
 
 ### `popMatrix`
 
@@ -2466,35 +2502,28 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int x     : text screen x position`
-	- `#!c int y     : text screen y position`
-	- `#!c int color : the text color to use (RGBA32 format)`
-	- `#!c string fmt: format text string`
-	- `#!c ...       : format values`
+	- `#!c int x`: Text screen x position
+	- `#!c int y`: Text screen y position
+	- `#!c int color`: The text color to use (RGBA32 format)
+	- `#!c string fmt`: Format text string
+	- `#!c ...`: Values to format
 	
 	__Description__:
 
 	Prints a formatted text string to the screen.
 
-	
+	The following table lists all supported format specifiers:
 
-	Format specifiers:
-
-	%%       literal '%' character
-
-	%d or %i signed integer value
-
-	%u       unsigned integer value
-
-	%f       float value
-
-	%x       lowercase hexidecimal integer value
-
-	%x       uppercase hexidecimal integer value
-
-	%v2      vec2 value
-
-	%v3      vec3 value
+	Format Specifier | Description
+	-|-
+	`%%` | Literal `%` character
+	`%d` or `%i` | Signed `int` value
+	`%u` | Unsigned `int` value
+	`%f` | `float` value
+	`%x` | Lowercase hexidecimal integer value (zero-padded)
+	`%X` | Uppercase hexidecimal integer value (zero-padded)
+	`%v2` | `vec2` value
+	`%v3` | `vec3` value
 
 ### `pushMatrix`
 
@@ -2516,11 +2545,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c vec3 v: the vector to rotate by`
+	- `#!c vec3 v`: The vector to rotate by
 	
 	__Description__:
 
-	Rotates the topmost matrix of the current matrix by the 3d vector v.
+	Rotates the topmost matrix of the current matrix stack by the 3D vector __v__.
 
 	Rotation angles must be in degrees.
 
@@ -2533,11 +2562,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c vec3 v: the vector to scale by`
+	- `#!c vec3 v`: The vector to scale by
 	
 	__Description__:
 
-	Scales the topmost matrix of the current matrix by the 3d vector v.
+	Scales the topmost matrix of the current matrix stack by the 3D vector __v__.
 
 ### `scissor`
 
@@ -2548,9 +2577,9 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int x`: Scissor screen x position [0-479]
+	- `#!c int x`: Scissor screen x position [0-639]
 	- `#!c int y`: Scissor screen y position [0-359]
-	- `#!c int width`: Scissor width [1-480]
+	- `#!c int width`: Scissor width [1-640]
 	- `#!c int height`: Scissor height [1-360]
 	
 	__Description__:
@@ -2564,15 +2593,15 @@ You can also use the search bar in the site header to search for a particular fu
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void scissorMode(int enable)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int enable`: Scissor test flag [true/false]
 	
 	__Description__:
 
-	...
+	Enables/disables scissor testing.
 
 ### `setModelViewMatrix`
 
@@ -2583,7 +2612,7 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c matrix m: the matrix to use`
+	- `#!c matrix m`: The new matrix to use
 	
 	__Description__:
 
@@ -2598,7 +2627,7 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c matrix m: the matrix to use`
+	- `#!c matrix m`: The new matrix to use
 	
 	__Description__:
 
@@ -2609,90 +2638,165 @@ You can also use the search bar in the site header to search for a particular fu
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void sprite2D(int src_x, int src_y, int src_w, int src_h, int dest_x, int dest_y)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int src_x`: Source X pixel coordinate
+	- `#!c int src_y`: Source Y pixel coordinate
+	- `#!c int src_w`: Source rectangle pixel width
+	- `#!c int src_h`: Source rectangle pixel height
+	- `#!c int dest_x`: Destination screen X coordinate
+	- `#!c int dest_y`: Destination screen Y coordinate
 	
 	__Description__:
 
-	...
+	Draws a 2D rectangular portion of `TEXMEM` to the screen.
 
 ### `sprite2DEx`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void sprite2DEx(int src_x, int src_y, int src_w, int src_h, int dest_x, int dest_y, int dest_w, int dest_h)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int src_x`: Source X pixel coordinate
+	- `#!c int src_y`: Source Y pixel coordinate
+	- `#!c int src_w`: Source rectangle pixel width
+	- `#!c int src_h`: Source rectangle pixel height
+	- `#!c int dest_x`: Destination screen X coordinate
+	- `#!c int dest_y`: Destination screen Y coordinate
+	- `#!c int dest_w`: Destination screen rectangle width
+	- `#!c int dest_h`: Destination screen rectangle height
 	
 	__Description__:
 
-	...
+	Draws a 2D rectangular portion of `TEXMEM` to the screen, scaled to the given destination rectangle.
 
 ### `stencilFunc`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void stencilFunc(int face, int func, int ref, int mask)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int face`: The face value to configure [0-2]
+	- `#!c int func`: The comparison function to use [0-7]
+	- `#!c int ref`: Reference stencil value for comparison [0x00-0xFF]
+	- `#!c int mask`: Mask value ANDed with __ref__ and the stored stencil value during the test [0x00-0xFF]
 	
 	__Description__:
 
-	...
+	Sets the stencil comparison function to use for the given __face__ value.
+
+	__face__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`FACE_FRONT` | 0 | Configure front face stencil function
+	`FACE_BACK` | 1 | Configure back face stencil function
+	`FACE_BOTH` | 2 | Configure front and back face stencil functions
+
+	__func__ must be one of the following values:
+
+	(__stencil__ is the value currently in the stencil buffer when the test is made.)
+
+	Constant | Value | Description
+	-|-|-
+	`FUNC_LESS` | 0 | Stencil test passes if ( __ref__ & __mask__ ) < ( __stencil__ & __mask__ )
+	`FUNC_LEQUAL` | 1 | Stencil test passes if ( __ref__ & __mask__ ) <= ( __stencil__ & __mask__ )
+	`FUNC_GREATER` | 2 | Stencil test passes if ( __ref__ & __mask__ ) > ( __stencil__ & __mask__ )
+	`FUNC_GEQUAL` | 3 | Stencil test passes if ( __ref__ & __mask__ ) >= ( __stencil__ & __mask__ )
+	`FUNC_EQUAL` | 4 | Stencil test passes if ( __ref__ & __mask__ ) = ( __stencil__ & __mask__ )
+	`FUNC_NOTEQUAL` | 5 | Stencil test passes if ( __ref__ & __mask__ ) != ( __stencil__ & __mask__ )
+	`FUNC_ALWAYS` | 6 | Stencil test always passes
+	`FUNC_NEVER` | 7 | Stencil test never passes
 
 ### `stencilMask`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void stencilMask(int face, int mask)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int face`: The face value to configure [0-2]
+	- `#!c int mask`: Mask value used to enable/disable writing to specific bits in the stencil buffer [0x00-0xFF]
 	
 	__Description__:
 
-	...
+	Confgures a mask used to enable/disable writing to specific bits in the stencil buffer for the given __face__ value.
+
+	__face__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`FACE_FRONT` | 0 | Configure front face stencil mask
+	`FACE_BACK` | 1 | Configure back face stencil mask
+	`FACE_BOTH` | 2 | Configure front and back face stencil masks
+
+	A mask of `0x00` will prevent any writing to the stencil buffer.
+
+	A mask of `0xFF` will allow all writing to the stencil buffer.
 
 ### `stencilMode`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void stencilMode(int enable)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int enable`: Stencil testing flag [true/false]
 	
 	__Description__:
 
-	...
+	Enables/disables stencil testing.
 
 ### `stencilOp`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void stencilOp(int face, int sfail, int dpfail, int dppass)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int face`: The face value to configure [0-2]
+	- `#!c int sfail`: The operation to perform when the stencil test fails [0-7]
+	- `#!c int dpfail`: The operation to perform when the stencil test passes, but the depth test fails [0-7]
+	- `#!c int dppass`: The operation to perform when both the stencil test and depth test pass, or the stencil test passes and depth testing is disabled [0-7]
 	
 	__Description__:
 
-	...
+	Sets the operation to perform on the stencil buffer when the stencil test is performed.
+
+	__face__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`FACE_FRONT` | 0 | Configure front face stencil operation
+	`FACE_BACK` | 1 | Configure back face stencil operation
+	`FACE_BOTH` | 2 | Configure front and back face stencil operations
+
+	__sfail__, __dpfail__, and __dppass__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`STENCIL_KEEP` | 0 | Keeps the current stencil value
+	`STENCIL_REPLACE` | 1 | Sets the stencil buffer value to __ref__, as specified by [`stencilFunc()`](#stencilfunc)
+	`STENCIL_INC` | 2 | Increments the current stencil buffer value, clamps to `0xFF`
+	`STENCIL_INC_WRAP` | 3 | Increments the current stencil buffer value, wraps around to `0` when incrementing the value `0xFF`
+	`STENCIL_DEC` | 4 | Decrements the current stencil buffer value, clamps to `0`
+	`STENCIL_DEC_WRAP` | 5 | Decrements the current stencil buffer value, wraps around to `0xFF` when decrementing the value `0`
+	`STENCIL_ZERO` | 6 | Sets the stencil buffer value to `0`
+	`STENCIL_INVERT` | 7 | Bitwise inverts the current stencil buffer value
 
 ### `texture`
 
@@ -2703,22 +2807,18 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int x     : texture window x position [0-1023]`
-	- `#!c int y     : texture window y position [0-1023]`
-	- `#!c int width : texture window width [1-256]`
-	- `#!c int height: texture window height [1-256]`
+	- `#!c int x`: Texture window x position [0-1023]
+	- `#!c int y`: Texture window y position [0-1023]
+	- `#!c int width`: Texture window width [1-256]
+	- `#!c int height`: Texture window height [1-256]
 	
 	__Description__:
 
 	Changes the window of texture memory to use as the current texture.
 
-	
-
 	A maximum texture size of 256x256 can be specified.
 
-	
-
-	Texture uv coordinates will be mapped to the specified texture window.
+	Texture UV coordinates will be mapped to the specified texture window.
 
 ### `textureMode`
 
@@ -2729,35 +2829,23 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int mode: the new texture mode to use [0-2]`
+	- `#!c int mode`: The new texture mode to use [0-2]
 	
 	__Description__:
 
 	Changes the current texture mode setting.
 
-	
+	__mode__ must be one of the following values:
 
-	Mode must be one of the following values:
+	Constant | Value | Description
+	-|-|-
+	`TEXTURE_WRAP` | 0 | Repeat texture (default)
+	`TEXTURE_CLAMP` | 1 | Clamp texture to edges
+	`TEXTURE_NONE` | 2 | Disable texturing
 
-	0: repeat texture (default)
+	Modes `TEXTURE_WRAP` and `TEXTURE_CLAMP` determine whether UVs outside of the 0.0-1.0 range will cause the texture to be repeated accross a surface, or if UVs should be clamped to the 0.0-1.0 range.
 
-	1: clamp texture to edges
-
-	2: disable texturing
-
-	
-
-	Modes 0 and 1 determine whether uvs outside of the 0.0-1.0 range
-
-	Will cause the texture to be repeated accross a surface, or
-
-	If uvs should be clamped to the 0.0-1.0 range.
-
-	
-
-	Mode 2 will ignore texture pixel colors and output
-
-	Pure white instead. useful when used with vertex colors.
+	Mode `TEXTURE_NONE` will ignore texture pixel colors and output pure white instead. useful when used with vertex colors.
 
 ### `translate`
 
@@ -2768,11 +2856,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c vec3 v: the vector to translate by`
+	- `#!c vec3 v`: The vector to translate by
 	
 	__Description__:
 
-	Translates the topmost matrix of the current matrix by the 3d vector v.
+	Translates the topmost matrix of the current matrix stack by the 3D vector __v__.
 
 ### `viewport`
 
@@ -2783,9 +2871,9 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int x`: Viewport screen x position [0-479]
+	- `#!c int x`: Viewport screen x position [0-639]
 	- `#!c int y`: Viewport screen y position [0-359]
-	- `#!c int width`: Viewport width [1-480]
+	- `#!c int width`: Viewport width [1-640]
 	- `#!c int height`: Viewport height [1-360]
 	
 	__Description__:
@@ -2801,379 +2889,499 @@ You can also use the search bar in the site header to search for a particular fu
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c int getTrackBPM(int track)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to query [0-7]
 	
 	__Description__:
 
-	...
+	Returns the current BPM value of the given soundchip track.
 
 ### `getTrackPan`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c int getTrackPan(int track)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to query [0-7]
 	
 	__Description__:
 
-	...
+	Returns the current panning value of the given soundchip track.
 
 ### `getTrackVolume`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c int getTrackVolume(int track)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to query [0-7]
 	
 	__Description__:
 
-	...
+	Returns the current volume of the given soundchip track.
 
 ### `muteTrack`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void muteTrack(int track)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to mute [0-7]
 	
 	__Description__:
 
-	...
+	Mutes the given soundchip track.
 
 ### `muteTracks`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void muteTracks(int track_mask)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track_mask`: Bitmask of the tracks to mute
 	
 	__Description__:
 
-	...
+	Mutes the given soundchip tracks.
+
+	__track_mask__ is an 8-bit bitmask, each bit corresponding to a soundchip track.
+
+	The following table lists the values that map to each track:
+
+	Mask Value | Track Index
+	-|-
+	Binary: `0b10000000` (Decimal: `128`) | 0
+	Binary: `0b01000000` (Decimal: `64`) | 1
+	Binary: `0b00100000` (Decimal: `32`) | 2
+	Binary: `0b00010000` (Decimal: `16`) | 3
+	Binary: `0b00001000` (Decimal: `8`) | 4
+	Binary: `0b00000100` (Decimal: `4`) | 5
+	Binary: `0b00000010` (Decimal: `2`) | 6
+	Binary: `0b00000001` (Decimal: `1`) | 7
 
 ### `pauseTrack`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void pauseTrack(int track)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to pause [0-7]
 	
 	__Description__:
 
-	...
+	Pauses the given soundchip track.
 
 ### `pauseTracks`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void pauseTracks(int track_mask)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track_mask`: Bitmask of the tracks to pause
 	
 	__Description__:
 
-	...
+	Pauses the given soundchip tracks.
+
+	__track_mask__ is an 8-bit bitmask, each bit corresponding to a soundchip track.
+
+	The following table lists the values that map to each track:
+
+	Mask Value | Track Index
+	-|-
+	Binary: `0b10000000` (Decimal: `128`) | 0
+	Binary: `0b01000000` (Decimal: `64`) | 1
+	Binary: `0b00100000` (Decimal: `32`) | 2
+	Binary: `0b00010000` (Decimal: `16`) | 3
+	Binary: `0b00001000` (Decimal: `8`) | 4
+	Binary: `0b00000100` (Decimal: `4`) | 5
+	Binary: `0b00000010` (Decimal: `2`) | 6
+	Binary: `0b00000001` (Decimal: `1`) | 7
 
 ### `playPattern`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void playPattern(int track, int pattern)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to play on [0-7]
+	- `#!c int pattern`: Index of the pattern to play [0x00-0xFF]
 	
 	__Description__:
 
-	...
+	Plays the given sequencer pattern using the given soundchip track.
 
 ### `playSong`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void playSong(int row)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int row`: Index of the song row to play from [0x00-0xFF]
 	
 	__Description__:
 
-	...
+	Plays all tracks starting at the given song row.
 
 ### `playTrack`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void playTrack(int track, int row)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to play [0-7]
+	- `#!c int row`: Index of the song row to play from [0x00-0xFF]
 	
 	__Description__:
 
-	...
+	Plays the given soundchip track starting at the given song row.
 
 ### `playWav`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void playWav(int track, int id, int note, float volume, int loop_mode)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to play on [0-7]
+	- `#!c int id`: Index of the WAVMAP entry to play [0-511]
+	- `#!c int note`: Note value to play the wave at
+	- `#!c float volume`: Volume percentage to play the wave at [0.0-100.0]
+	- `#!c int loop_mode`: Loop mode to use when playing [0-3]
 	
 	__Description__:
 
-	...
+	Plays the sound described by a WAVMAP entry.
+
+	__loop_mode__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`LOOP_OFF` | 0 | Do not loop
+	`LOOP_FORWARD` | 1 | Loop from the beginning of the wave
+	`LOOP_PINGPONG` | 2 | Alternate between playing the wave forwards and backwards
+	`LOOP_RANGE` | 3 | Loop using the sample range specified in the WAVMAP entry
 
 ### `playWavEx`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void playWavEx(int track, int sample_start, int sample_end, int loop_start, int loop_end, int note, float volume, int loop_mode)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to play on [0-7]
+	- `#!c int sample_start`: Index of the WAVMEM sample pair that marks the beginning of the sound [`0x000000`-`0x1BFFFF`]
+	- `#!c int sample_end`: Index of the WAVMEM sample pair that marks the end of the sound (inclusive) [`0x000000`-`0x1BFFFF`]
+	- `#!c int loop_start`: Index of the WAVMEM sample pair that marks the beginning loop point [`0x000000`-`0x1BFFFF`]
+	- `#!c int loop_end`: Index of the WAVMEM sample pair that marks the end loop point (inclusive) [`0x000000`-`0x1BFFFF`]
+	- `#!c int note`: Note value to play the wave at (`0nC4` is the default pitch)
+	- `#!c float volume`: Volume percentage to play the wave at [0.0-100.0]
+	- `#!c int loop_mode`: Loop mode to use when playing [0-3]
 	
 	__Description__:
 
-	...
+	Plays a given range of samples from WAVMEM.
+
+	__loop_mode__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`LOOP_OFF` | 0 | Do not loop
+	`LOOP_FORWARD` | 1 | Loop from the beginning of the wave
+	`LOOP_PINGPONG` | 2 | Alternate between playing the wave forwards and backwards
+	`LOOP_RANGE` | 3 | Loop using the sample range specified by __loop_start__ and __loop_end__
 
 ### `resumeTrack`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void resumeTrack(int track)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to resume [0-7]
 	
 	__Description__:
 
-	...
+	Resumes the given soundchip track.
 
 ### `resumeTracks`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void resumeTracks(int track_mask)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track_mask`: Bitmask of the tracks to resume
 	
 	__Description__:
 
-	...
+	Resumes the given soundchip tracks.
+
+	__track_mask__ is an 8-bit bitmask, each bit corresponding to a soundchip track.
+
+	The following table lists the values that map to each track:
+
+	Mask Value | Track Index
+	-|-
+	Binary: `0b10000000` (Decimal: `128`) | 0
+	Binary: `0b01000000` (Decimal: `64`) | 1
+	Binary: `0b00100000` (Decimal: `32`) | 2
+	Binary: `0b00010000` (Decimal: `16`) | 3
+	Binary: `0b00001000` (Decimal: `8`) | 4
+	Binary: `0b00000100` (Decimal: `4`) | 5
+	Binary: `0b00000010` (Decimal: `2`) | 6
+	Binary: `0b00000001` (Decimal: `1`) | 7
 
 ### `setTrackBPM`
 
 !!! info ""
+	!!! warning
+		This function is not fully implemented, and will have no effect.
+	
 	__Signature__:
 
-	`#!c ...`
+	`#!c void setTrackBPM(int track, int bpm)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to modify [0-7]
+	- `#!c int bpm`: New BPM value to play at [1-255]
 	
 	__Description__:
 
-	...
+	Sets the BPM value of the given soundchip track.
 
 ### `setTrackPan`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void setTrackPan(int track, int pan)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to modify [0-7]
+	- `#!c int pan`: New panning value to play at [-100-100]
 	
 	__Description__:
 
-	...
+	Sets the panning value of the given soundchip track.
 
 ### `setTrackVolume`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void setTrackVolume(int track, int volume)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to modify [0-7]
+	- `#!c int volume`: New volume value to play at [0x00-0xFF]
 	
 	__Description__:
 
-	...
+	Sets the volume value of the given soundchip track.
 
 ### `stopTrack`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void stopTrack(int track)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to stop [0-7]
 	
 	__Description__:
 
-	...
+	Stops the given soundchip track.
 
 ### `stopTracks`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void stopTracks(int track_mask)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track_mask`: Bitmask of the tracks to stop
 	
 	__Description__:
 
-	...
+	Stops the given soundchip tracks.
+
+	__track_mask__ is an 8-bit bitmask, each bit corresponding to a soundchip track.
+
+	The following table lists the values that map to each track:
+
+	Mask Value | Track Index
+	-|-
+	Binary: `0b10000000` (Decimal: `128`) | 0
+	Binary: `0b01000000` (Decimal: `64`) | 1
+	Binary: `0b00100000` (Decimal: `32`) | 2
+	Binary: `0b00010000` (Decimal: `16`) | 3
+	Binary: `0b00001000` (Decimal: `8`) | 4
+	Binary: `0b00000100` (Decimal: `4`) | 5
+	Binary: `0b00000010` (Decimal: `2`) | 6
+	Binary: `0b00000001` (Decimal: `1`) | 7
 
 ### `unmuteTrack`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void unmuteTrack(int track)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track`: Index of the track to unmute [0-7]
 	
 	__Description__:
 
-	...
+	Unmutes the given soundchip track.
 
 ### `unmuteTracks`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void unmuteTracks(int track_mask)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int track_mask`: Bitmask of the tracks to unmute
 	
 	__Description__:
 
-	...
+	Unmutes the given soundchip tracks.
+
+	__track_mask__ is an 8-bit bitmask, each bit corresponding to a soundchip track.
+
+	The following table lists the values that map to each track:
+
+	Mask Value | Track Index
+	-|-
+	Binary: `0b10000000` (Decimal: `128`) | 0
+	Binary: `0b01000000` (Decimal: `64`) | 1
+	Binary: `0b00100000` (Decimal: `32`) | 2
+	Binary: `0b00010000` (Decimal: `16`) | 3
+	Binary: `0b00001000` (Decimal: `8`) | 4
+	Binary: `0b00000100` (Decimal: `4`) | 5
+	Binary: `0b00000010` (Decimal: `2`) | 6
+	Binary: `0b00000001` (Decimal: `1`) | 7
 
 ## Physics
 
-### `checkCollision`
+### `collide`
 
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c int collide(void* a, void* b)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c void* a`: Pointer to the first [collision object](era-c-overview.md#collision-objects) to test
+	- `#!c void* b`: Pointer to the second collision object to test
 	
 	__Description__:
 
-	...
+	Returns `true` if __a__ is colliding with __b__. Otherwise, returns `false`.
+
+	!!! warning
+		Collision detection is currently only implemented for `colaabb` vs `colaabb`.
 
 ### `getRaycastNormal`
 
-!!! info ""
-	__Signature__:
-
-	`#!c ...`
-
-	__Arguments__:
-
-	- `#!c ...`
-	
-	__Description__:
-
-	...
+!!! warning
+	This function is not currently implemented.
 
 ### `getRaycastPoint`
 
-!!! info ""
-	__Signature__:
-
-	`#!c ...`
-
-	__Arguments__:
-
-	- `#!c ...`
-	
-	__Description__:
-
-	...
+!!! warning
+	This function is not currently implemented.
 
 ### `raycast`
 
+!!! warning
+	This function is not currently implemented.
+
+## Memory
+
+### `alloc`
+
 !!! info ""
 	__Signature__:
 
-	`#!c ...`
+	`#!c void* alloc(int size)`
 
 	__Arguments__:
 
-	- `#!c ...`
+	- `#!c int size`: The amount of bytes to allocate
 	
 	__Description__:
 
-	...
+	Allocates a [heap](memory-map.md#heap) memory block of at least __size__ bytes and returns its address.
 
-## Memory
+	Returns `#!c null` if the allocation fails.
+
+### `free`
+
+!!! info ""
+	__Signature__:
+
+	`#!c void free(void* block)`
+
+	__Arguments__:
+
+	- `#!c void* block`: Pointer to the block to free
+	
+	__Description__:
+
+	Deallocates a [heap](memory-map.md#heap) memory block if __block__ points to a block previously allocated by [`alloc()`](#alloc).
+
+	`#!c free(null)` does nothing.
 
 ### `initMemCard`
 
@@ -3184,29 +3392,17 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c string id: unique identifier for memory card data`
+	- `#!c string id`: Unique identifier for memory card data
 	
 	__Description__:
 
-	Initializes the system's memory card memory range.
+	Initializes the system's [memory card](memory-map.md#memory-card) memory range.
 
-	Memory card data is stored in the address range 0x05800000 to 0x05800fff.
+	__id__ is a string used to identify saved memory card data.
 
-	
+	__id__ must be between 1 and 16 characters long and may only contain the characters `a-z`, `A-Z`, `0-9`, and `_`
 
-	Id is a string used to identify saved memory card data.
-
-	Id must be between 1 and 16 characters long and may only contain
-
-	The characters a-z, a-z, 0-9, and _
-
-	
-
-	If save data matching the given id exists, it will be loaded.
-
-	Write bytes to the address range 0x05800000 to 0x05800fff to save
-
-	Data to the memory card.
+	If save data matching the given ID exists, it will be loaded.
 
 ### `loadObjBank`
 
@@ -3217,17 +3413,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int bank: index of the object bank to load [0-3]`
+	- `#!c int bank`: Index of the object bank to load [0-3]
 	
 	__Description__:
 
-	Loads an object bank from the cartridge into system memory.
-
-	
-
-	System object data is stored in the address range
-
-	0x00c00000 to 0x00f5ffff.
+	Loads an [OBJBANK](memory-map.md#objbanks) from the cartridge into [OBJMEM](memory-map.md#objmem).
 
 ### `loadSeqBank`
 
@@ -3238,17 +3428,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int bank: index of the sequencer bank to load [0-7]`
+	- `#!c int bank`: Index of the sequencer bank to load [0-7]
 	
 	__Description__:
 
-	Loads a sequencer bank from the cartridge into system memory.
-
-	
-
-	System sequencer data is stored in the address range
-
-	0x01700000 to 0x0173ffff.
+	Loads a [SEQBANK](memory-map.md#seqbanks) from the cartridge into [SEQMEM](memory-map.md#seqmem).
 
 ### `loadTexBank`
 
@@ -3259,17 +3443,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int bank: index of the texture bank to load [0-3]`
+	- `#!c int bank`: Index of the texture bank to load [0-3]
 	
 	__Description__:
 
-	Loads a texture bank from the cartridge into system memory.
-
-	
-
-	System texture data is stored in the address range
-
-	0x00800000 to 0x00bfffff.
+	Loads a [TEXBANK](memory-map.md#texbanks) from the cartridge into [TEXMEM](memory-map.md#texmem).
 
 ### `loadWavBank`
 
@@ -3280,17 +3458,11 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int bank: index of the wave bank to load [0-1]`
+	- `#!c int bank`: Index of the wave bank to load [0-1]
 	
 	__Description__:
 
-	Loads a wave bank from the cartridge into system memory.
-
-	
-
-	System wave data is stored in the address range
-
-	0x01000000 to 0x016fffff.
+	Loads a [WAVBANK](memory-map.md#wavbanks) from the cartridge into [WAVMEM](memory-map.md#wavmem).
 
 ### `memcpy`
 
@@ -3301,17 +3473,15 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c void* destination: the memory address to write to`
-	- `#!c void* source     : the memory address to read from`
-	- `#!c int n            : the amount of bytes to read`
+	- `#!c void* destination`: The memory address to write to
+	- `#!c void* source`: The memory address to read from
+	- `#!c int n`: The amount of bytes to read
 	
 	__Description__:
 
-	Copies n bytes from source to destination.
+	Copies __n__ bytes from __source__ to __destination__.
 
-	
-
-	Source and destination buffers may safely overlap.
+	__source__ and __destination__ buffers may safely overlap.
 
 ### `memset`
 
@@ -3322,15 +3492,13 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c void* destination: the memory address to write to`
-	- `#!c int n            : the amount of bytes to write`
-	- `#!c int value        : byte value to write`
+	- `#!c void* destination`: The memory address to write to
+	- `#!c int n`: The amount of bytes to write
+	- `#!c int value`: Byte value to write [0-255]
 	
 	__Description__:
 
-	Copies the given byte value to the first n bytes
-
-	Starting at the destination address.
+	Copies the given byte __value__ to the first __n__ bytes starting at __destination__.
 
 ### `peek8`
 
@@ -3341,7 +3509,7 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c void* address: memory pointer to read from`
+	- `#!c void* address`: Memory address to read from
 	
 	__Description__:
 
@@ -3356,7 +3524,7 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c void* address: memory pointer to read from`
+	- `#!c void* address`: Memory address to read from
 	
 	__Description__:
 
@@ -3371,8 +3539,8 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c void* address: memory pointer to write to`
-	- `#!c int value    : byte value to write`
+	- `#!c void* address`: Memory address to write to
+	- `#!c int value`: Byte value to write [0-255]
 	
 	__Description__:
 
@@ -3387,12 +3555,71 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c void* address: memory pointer to write to`
-	- `#!c int value    : 32-bit integer value to write`
+	- `#!c void* address`: Memory address to write to
+	- `#!c int value`: 32-bit integer value to write
 	
 	__Description__:
 
 	Writes the 32-bit integer to the given memory address.
+
+### `realloc`
+
+!!! info ""
+	__Signature__:
+
+	`#!c void* realloc(void* block, int size)`
+
+	__Arguments__:
+
+	- `#!c void* block`: Pointer to the block to reallocate
+	- `#!c int size`: The new amount of bytes to allocate
+	
+	__Description__:
+
+	Reallocates the [heap](memory-map.md#heap) memory block pointed to by __block__ to at least __size__ bytes and returns its address.
+
+	The contents of __block__ are copied to the newly allocated block.
+
+	Returns `#!c null` if the reallocation fails.
+
+### `strcat`
+
+!!! info ""
+	__Signature__:
+
+	`#!c string strcat(string a, string b)`
+
+	__Arguments__:
+
+	- `#!c string a`: First string to concatenate
+	- `#!c string b`: Second string to concatenate
+	
+	__Description__:
+
+	Returns a new `#!c string` containing the contents of __a__ concatenated with the contents of __b__.
+
+	A [heap](memory-map.md#heap) memory block is allocated to contain the new `#!c string`.
+
+	If allocation fails, returns a `#!c string` with the value `#!c string(0, null)`.
+
+### `strdup`
+
+!!! info ""
+	__Signature__:
+
+	`#!c string strdup(string s)`
+
+	__Arguments__:
+
+	- `#!c string s`: The string to duplicate
+	
+	__Description__:
+
+	Returns a new `#!c string` containing a copy of the contents of __s__.
+
+	A [heap](memory-map.md#heap) memory block is allocated to contain the new `#!c string`.
+
+	If allocation fails, returns a `#!c string` with the value `#!c string(0, null)`.
 
 ## Misc
 
@@ -3418,8 +3645,6 @@ You can also use the search bar in the site header to search for a particular fu
 
 	Returns the remaining number of vararg bytes for a vararg function.
 
-	
-
 	Must only be called from a vararg function.
 
 ### `vargv`
@@ -3431,14 +3656,10 @@ You can also use the search bar in the site header to search for a particular fu
 
 	__Arguments__:
 
-	- `#!c int offset: the number of bytes to advance the vararg pointer`
+	- `#!c int offset`: The number of bytes to advance the vararg pointer
 	
 	__Description__:
 
-	Returns a pointer to the current vararg argument and advances the
-
-	Vararg pointer by $offset bytes.
-
-	
+	Returns a pointer to the current vararg argument and advances the vararg pointer by $offset bytes.
 
 	Must only be called from a vararg function.
