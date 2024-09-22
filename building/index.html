@@ -401,6 +401,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -410,6 +421,145 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building on Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building on Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-w64devkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring w64DevKit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-nelua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Nelua
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-raylib" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Raylib
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-and-installing-e3dblipkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building and Installing E3DBlipKit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-era-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building ERA-3D
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building on Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building on Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-nelua_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Nelua
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-raylib_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Raylib
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-and-installing-e3dblipkit_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building and Installing E3DBlipKit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-era-3d_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building ERA-3D
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -554,20 +704,63 @@
 
 
 <h1 id="building">Building<a class="headerlink" href="#building" title="Permanent link">&para;</a></h1>
-<p>To build ERA-3D, you must first <a href="https://nelua.io/installing/">install Nelua</a>.
-Follow the installation instructions on the Nelua website.</p>
-<p>Once Nelua is installed, build and install the following C libraries:</p>
-<ul>
-<li><a href="https://github.com/raysan5/raylib">raylib v5.0</a></li>
-<li><a href="https://github.com/detomon/BlipKit">BlipKit</a></li>
-<li><a href="https://github.com/kuba--/zip">zip</a></li>
-</ul>
-<p>Once all dependencies are installed, clone the ERA-3D repository and run the following commands:</p>
-<div class="highlight"><pre><span></span><code>cd ERA-3D/
-nelua --release src/main.nelua -o era-3d
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>To build ERA-3D from source, you must first <a href="https://cmake.org/download/">install CMake</a>.</p>
+<p>After CMake is installed, follow the instructions for your operating system.</p>
+<h2 id="building-on-windows">Building on Windows<a class="headerlink" href="#building-on-windows" title="Permanent link">&para;</a></h2>
+<h3 id="configuring-w64devkit">Configuring w64DevKit<a class="headerlink" href="#configuring-w64devkit" title="Permanent link">&para;</a></h3>
+<p>To configure a building environment, it is recommended to <a href="https://github.com/skeeto/w64devkit/releases">install w64DevKit</a>.</p>
+<p>Run <code>...\w64devkit\w64devkit.exe</code> to launch a shell environment for compiling C programs. All commands listed in the following instructions assume you are running <code>w64devkit.exe</code>.</p>
+<h3 id="installing-nelua">Installing Nelua<a class="headerlink" href="#installing-nelua" title="Permanent link">&para;</a></h3>
+<p>Download the <a href="https://github.com/edubart/nelua-lang/releases">latest Nelua release</a> and extract the files to a suitable install location.</p>
+<p>Add the path containing <code>nelua.exe</code> to the <code>Path</code> environment variable.</p>
+<h3 id="installing-raylib">Installing Raylib<a class="headerlink" href="#installing-raylib" title="Permanent link">&para;</a></h3>
+<p>Download the <a href="https://github.com/raysan5/raylib/releases/tag/5.0">Raylib 5.0 mingw-w64 release</a> and extract the files from the zip archive.</p>
+<p>Copy all the <code>.h</code> files from the <code>include</code> folder into <code>...\w64devkit\x86_64-w64-mingw32\include</code>.</p>
+<p>Copy <code>libraylib.a</code> from the <code>lib</code> folder into <code>...\w64devkit\x86_64-w64-mingw32\lib</code>.</p>
+<h3 id="building-and-installing-e3dblipkit">Building and Installing E3DBlipKit<a class="headerlink" href="#building-and-installing-e3dblipkit" title="Permanent link">&para;</a></h3>
+<p>Clone the <a href="https://github.com/AuzFox/E3DBlipKit">E3DBlipKit repository</a> or download and extract everything from the source zip.</p>
+<p>Enter the <code>E3DBlipKit</code> folder using the <code>w64DevKit</code> shell and run the following commands:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;MinGW Makefiles&quot;</span><span class="w"> </span>..
+make
 </code></pre></div>
-<p>You should now have the <code>era-3d</code> executable.
-move <code>era-3d</code> and the <code>assets</code> directory to the desired install location.</p>
+<p>If E3DBlipKit built successfully, you will find <code>libblipkit.a</code> in <code>E3DBlipKit\build\src</code>. Copy <code>libblipkit.a</code> into <code>...\w64devkit\x86_64-w64-mingw32\lib</code>.</p>
+<p>Copy all the <code>.h</code> files from the <code>E3DBlipKit\src</code> folder into <code>...\w64devkit\x86_64-w64-mingw32\include\blipkit</code>. (Create the <code>blipkit</code> folder inside <code>include</code>)</p>
+<h3 id="building-era-3d">Building ERA-3D<a class="headerlink" href="#building-era-3d" title="Permanent link">&para;</a></h3>
+<p>If all of the above steps have been completed, it's time to finally build ERA-3D!</p>
+<p>Clone the <a href="https://github.com/AuzFox/ERA-3D">ERA-3D repository</a> or download and extract everything from the source zip.</p>
+<p>Enter the <code>ERA-3D</code> folder using the <code>w64DevKit</code> shell and run the following command:</p>
+<div class="highlight"><pre><span></span><code>nelua<span class="w"> </span>--release<span class="w"> </span>--cflags<span class="o">=</span><span class="s2">&quot;-static&quot;</span><span class="w"> </span>src/main.nelua<span class="w"> </span>-o<span class="w"> </span>era-3d
+</code></pre></div>
+<p>If the build succeeded, you should now have <code>era-3d.exe</code> in the <code>ERA-3D</code> folder.</p>
+<p>Copy <code>era-3d.exe</code> and the <code>ERA-3D\assets</code> folder into your desired install location.</p>
+<h2 id="building-on-linux">Building on Linux<a class="headerlink" href="#building-on-linux" title="Permanent link">&para;</a></h2>
+<h3 id="installing-nelua_1">Installing Nelua<a class="headerlink" href="#installing-nelua_1" title="Permanent link">&para;</a></h3>
+<p>Follow the linux instructions for <a href="https://nelua.io/installing/">installing Nelua</a>.</p>
+<h3 id="installing-raylib_1">Installing Raylib<a class="headerlink" href="#installing-raylib_1" title="Permanent link">&para;</a></h3>
+<p>Download the <a href="https://github.com/raysan5/raylib/releases/tag/5.0">Raylib 5.0 linux release</a> and extract the files from the zip archive.</p>
+<p>Copy all the <code>.h</code> files from the <code>include/</code> folder into <code>/usr/local/include/</code>.</p>
+<p>Copy <code>libraylib.a</code> from the <code>lib/</code> folder into <code>/usr/local/lib/</code>.</p>
+<h3 id="building-and-installing-e3dblipkit_1">Building and Installing E3DBlipKit<a class="headerlink" href="#building-and-installing-e3dblipkit_1" title="Permanent link">&para;</a></h3>
+<p>Clone the <a href="https://github.com/AuzFox/E3DBlipKit">E3DBlipKit repository</a> or download and extract everything from the source zip.</p>
+<p>Enter the <code>E3DBlipKit</code> folder and run the following commands:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>..
+make
+</code></pre></div>
+<p>If E3DBlipKit built successfully, you will find <code>libblipkit.a</code> in <code>E3DBlipKit/build/src/</code>. Copy <code>libblipkit.a</code> into <code>/usr/local/lib</code>.</p>
+<p>Copy all the <code>.h</code> files from the <code>E3DBlipKit/src</code> folder into <code>/usr/local/include/blipkit</code>. (Create the <code>blipkit</code> folder inside <code>include/</code>)</p>
+<h3 id="building-era-3d_1">Building ERA-3D<a class="headerlink" href="#building-era-3d_1" title="Permanent link">&para;</a></h3>
+<p>If all of the above steps have been completed, it's time to finally build ERA-3D!</p>
+<p>Clone the <a href="https://github.com/AuzFox/ERA-3D">ERA-3D repository</a> or download and extract everything from the source zip.</p>
+<p>Enter the <code>ERA-3D/</code> directory and run the following command:</p>
+<div class="highlight"><pre><span></span><code>nelua<span class="w"> </span>--release<span class="w"> </span>--cflags<span class="o">=</span><span class="s2">&quot;-static&quot;</span><span class="w"> </span>src/main.nelua<span class="w"> </span>-o<span class="w"> </span>era-3d
+</code></pre></div>
+<p>If the build succeeded, you should now have the <code>era-3d</code> executable in the <code>ERA-3D/</code> folder.</p>
+<p>Copy <code>era-3d</code> and the <code>ERA-3D/assets/</code> folder into your desired install location.</p>
 
 
 
