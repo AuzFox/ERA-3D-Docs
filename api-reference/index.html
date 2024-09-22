@@ -2370,6 +2370,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#peekf" class="md-nav__link">
+    <span class="md-ellipsis">
+      peekf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#poke8" class="md-nav__link">
     <span class="md-ellipsis">
       poke8
@@ -2382,6 +2391,15 @@
   <a href="#poke32" class="md-nav__link">
     <span class="md-ellipsis">
       poke32
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokef" class="md-nav__link">
+    <span class="md-ellipsis">
+      pokef
     </span>
   </a>
   
@@ -6061,7 +6079,7 @@ This function always rounds toward negative infinity.</p>
 <li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span></code>: Memory address to read from</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Returns the value of the byte at the given memory address.</p>
+<p>Returns the byte at the given memory address.</p>
 </div>
 <h3 id="peek32"><code>peek32</code><a class="headerlink" href="#peek32" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -6074,6 +6092,17 @@ This function always rounds toward negative infinity.</p>
 <p><strong>Description</strong>:</p>
 <p>Returns the 32-bit integer value starting at the given memory address.</p>
 </div>
+<h3 id="peekf"><code>peekf</code><a class="headerlink" href="#peekf" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p><strong>Signature</strong>:</p>
+<p><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">peekf</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">)</span></code></p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span></code>: Memory address to read from</li>
+</ul>
+<p><strong>Description</strong>:</p>
+<p>Returns the float value starting at the given memory address.</p>
+</div>
 <h3 id="poke8"><code>poke8</code><a class="headerlink" href="#poke8" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p><strong>Signature</strong>:</p>
@@ -6084,7 +6113,7 @@ This function always rounds toward negative infinity.</p>
 <li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">value</span></code>: Byte value to write [0-255]</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Writes the given byte to the given memory address.</p>
+<p>Writes a byte to the given memory address.</p>
 </div>
 <h3 id="poke32"><code>poke32</code><a class="headerlink" href="#poke32" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -6096,7 +6125,19 @@ This function always rounds toward negative infinity.</p>
 <li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">value</span></code>: 32-bit integer value to write</li>
 </ul>
 <p><strong>Description</strong>:</p>
-<p>Writes the 32-bit integer to the given memory address.</p>
+<p>Writes a 32-bit integer to the given memory address.</p>
+</div>
+<h3 id="pokef"><code>pokef</code><a class="headerlink" href="#pokef" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p><strong>Signature</strong>:</p>
+<p><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="n">pokef</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code></p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code class="highlight"><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">address</span></code>: Memory address to write to</li>
+<li><code class="highlight"><span class="kt">float</span><span class="w"> </span><span class="n">value</span></code>: float value to write</li>
+</ul>
+<p><strong>Description</strong>:</p>
+<p>Writes a float to the given memory address.</p>
 </div>
 <h3 id="realloc"><code>realloc</code><a class="headerlink" href="#realloc" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
