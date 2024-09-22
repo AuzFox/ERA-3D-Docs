@@ -2303,6 +2303,28 @@ You can also use the search bar in the site header to search for a particular fu
 
 	Configures the topmost matrix of the current matrix stack to a view matrix describing a view from __eye__ looking at __target__ with an up vector of __up__.
 
+### `matrixMode`
+
+!!! info ""
+	__Signature__:
+
+	`#!c void matrixMode(int index)`
+
+	__Arguments__:
+
+	- `#!c int index`: Index of the matrix stack to use. [0-1]
+	
+	__Description__:
+
+	Changes the current matrix stack used for matrix stack functions such as `pushMatrix()`, `popMatrix()`, `translate()`, etc.
+
+	__index__ must be one of the following values:
+
+	Constant | Value | Description
+	-|-|-
+	`MAT_PROJECTION` | 0 | Switch to projection matrix stack
+	`MAT_MODELVIEW` | 1 | Switch to model-view matrix stack
+
 ### `meshColor`
 
 !!! info ""

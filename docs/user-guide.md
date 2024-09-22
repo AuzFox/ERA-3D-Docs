@@ -2,7 +2,10 @@
 
 ## Introduction
 
-...
+!!! warning
+    The asset editors built into ERA-3D are still in early development, and are missing important functionality.
+
+    It is currently recommended to use external editors for creating assets like textures and 3D models.
 
 ## General Controls
 
@@ -17,13 +20,13 @@ The following keyboard shortcuts are always available, except while an asset imp
 
 ## Editor Screens
 
-...
+TODO
 
 ### Code Editor
 
-...
+This screen is where the ERA-C code for the current cart is written.
 
-#### Controls
+#### Code Editor Controls
 
 - ++left++ / ++right++ / ++up++ / ++down++: Move cursor
 - ++home++: Move cursor to the beginning of the line
@@ -34,32 +37,62 @@ The following keyboard shortcuts are always available, except while an asset imp
 - ++alt+down++: Move line down
 - ++ctrl+d++: Duplicate line
 - ++shift+tab++: Deindent line
-- ++ctrl+i++: Import code text file (current code is discarded!)
+- ++ctrl+i++: Import code text file (current code is replaced!)
 
 ### Audio Sequencer (Tracker)
 
-...
+!!! warning
+    Many important features of the Tracker have not been implemented yet.
+
+The Audio Sequencer allows audio samples stored on the cartridge to be sequenced and played back by the soundchip.
+
+#### General Tracker Controls
+
+- ++left++ / ++right++ / ++up++ / ++down++: Move cursor
+- ++tab++: Move cursor to next track
+- ++shift+tab++: Move cursor to previous track
+- ++alt+up++ / ++down++: Switch views
+- ++space++: Play/stop song
+- ++ctrl+i++ Import an audio file (`.wav`) into the selected [WAVBANK](memory-map.md#wavbanks)
+
+#### Song View Controls
+
+- ++0++-++9++, ++a++-++f++: Change pattern hex value
+
+#### Pattern View Controls
+
+TODO
+
+#### Instrument View Controls
+
+TODO
 
 ### Model Editor
 
 !!! warning
     The Model Editor has not been implemented yet.
 
-    However, on the Model Editor screen, you can press ++ctrl+i++ to import a 3D model file (`.obj`, `.gltf/glb`).
+    However, on the Model Editor screen, you can press ++ctrl+i++ to import a 3D model file (`.obj`, `.gltf/glb`) into [OBJBANK 0](memory-map.md#objbanks).
+
+TODO
 
 ### Texture Editor
 
-...
+TODO
 
-#### Controls
+#### Texture Editor Controls
 
-- ++"Left Click"+"Drag"++: 
+- ++ctrl+i++ Import an image file (`.png`) into the selected [TEXBANK](memory-map.md#texbanks) (the image being imported MUST be 1024x1024!)
 
 ### Console
 
-...
+The console allows the user to run commands to configure ERA-3D's settings, as well as view API documentation.
 
-#### Controls
+!!! warning
+    The API documentation accessed using the console is not up-to-date with the online version.
 
-- ++up++ / ++down++: Navigate command history
-- ++enter++: Run command
+    For now, it is recommended to use the [API Reference page](api-reference.md) instead.
+
+#### Console Controls
+
+- ++enter++: Run command`
