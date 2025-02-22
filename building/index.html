@@ -446,81 +446,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#building-on-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building on Windows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Building on Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuring-w64devkit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuring w64DevKit
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installing-nelua" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing Nelua
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-era-3d" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building ERA-3D
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-on-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building on Linux
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Building on Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installing-nelua_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing Nelua
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-era-3d_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building ERA-3D
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -671,30 +596,36 @@
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>To build ERA-3D from source, you must first <a href="https://cmake.org/download/">install CMake</a>.</p>
 <p>After CMake is installed, follow the instructions for your operating system.</p>
-<h2 id="building-on-windows">Building on Windows<a class="headerlink" href="#building-on-windows" title="Permanent link">&para;</a></h2>
-<h3 id="configuring-w64devkit">Configuring w64DevKit<a class="headerlink" href="#configuring-w64devkit" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Building on Windows</label><label for="__tabbed_1_2">Building on Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Configuring w64DevKit</strong></p>
 <p>To configure a building environment, it is recommended to <a href="https://github.com/skeeto/w64devkit/releases">install w64DevKit</a>.</p>
 <p>Run <code>...\w64devkit\w64devkit.exe</code> to launch a shell environment for compiling C programs. All commands listed in the following instructions assume you are running <code>w64devkit.exe</code>.</p>
-<h3 id="installing-nelua">Installing Nelua<a class="headerlink" href="#installing-nelua" title="Permanent link">&para;</a></h3>
+<p><strong>Installing Nelua</strong></p>
 <p>Download the <a href="https://github.com/edubart/nelua-lang/releases">latest Nelua release</a> and extract the files to a suitable install location.</p>
 <p>Add the path containing <code>nelua.bat</code> to the <code>Path</code> environment variable.</p>
-<h3 id="building-era-3d">Building ERA-3D<a class="headerlink" href="#building-era-3d" title="Permanent link">&para;</a></h3>
+<p><strong>Building ERA-3D</strong></p>
 <p>Clone the <a href="https://github.com/AuzFox/ERA-3D">ERA-3D repository</a> or download and extract everything from the source zip.</p>
 <p>Enter the <code>ERA-3D</code> folder using the <code>w64DevKit</code> shell and run the following command:</p>
 <div class="highlight"><pre><span></span><code>./build.sh
 </code></pre></div>
 <p>If the build succeeded, you should now have <code>era-3d.exe</code> in the <code>ERA-3D</code> folder.</p>
 <p>Copy <code>era-3d.exe</code> into your desired install location.</p>
-<h2 id="building-on-linux">Building on Linux<a class="headerlink" href="#building-on-linux" title="Permanent link">&para;</a></h2>
-<h3 id="installing-nelua_1">Installing Nelua<a class="headerlink" href="#installing-nelua_1" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
+<p><strong>Installing Nelua</strong></p>
 <p>Follow the linux instructions for <a href="https://nelua.io/installing/">installing Nelua</a>.</p>
-<h3 id="building-era-3d_1">Building ERA-3D<a class="headerlink" href="#building-era-3d_1" title="Permanent link">&para;</a></h3>
+<p><strong>Building ERA-3D</strong></p>
 <p>Clone the <a href="https://github.com/AuzFox/ERA-3D">ERA-3D repository</a> or download and extract everything from the source zip.</p>
 <p>Enter the <code>ERA-3D/</code> directory and run the following command:</p>
 <div class="highlight"><pre><span></span><code>./build.sh
 </code></pre></div>
 <p>If the build succeeded, you should now have the <code>era-3d</code> executable in the <code>ERA-3D/</code> folder.</p>
 <p>Copy <code>era-3d</code> into your desired install location.</p>
+</div>
+</div>
+</div>
 
 
 
