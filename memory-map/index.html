@@ -1261,40 +1261,18 @@
 <p>Address range: <code>0x00F62054-0x00F63853</code></p>
 <p>Accessible using constant <code>MEMORY_OBJMAP</code>.</p>
 <p>Contains a table of 512 user-defined mesh objects.</p>
-<p>Each entry in the <code>OBJMAP</code> consists of 3 32-bit <code>int</code> values, detailed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th><code>int</code> Index</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>Primitive type (must be <code>MESH_LINES</code>, <code>MESH_TRIANGLES</code>, or <code>MESH_QUADS</code>)</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Start <code>OBJMEM</code> vertex index</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Primitive count</td>
-</tr>
-</tbody>
-</table>
+<p>Each entry in the <code>OBJMAP</code> is represented by an <a href="../era-c-overview/#objentry"><code>objentry</code></a> struct.</p>
 <p>The <code>drawObj()</code> API function accepts an index and will draw the mesh described by the corresponding entry in the <code>OBJMAP</code> table.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// configure a custom OBJMAP entry</span>
 
 <span class="w">    </span><span class="c1">// get a pointer to the first OBJMAP entry (entry index 0)</span>
-<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">objmap_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MEMORY_OBJMAP</span><span class="p">;</span>
+<span class="w">    </span><span class="n">objentry</span><span class="o">*</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getObjEntry</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// set OBJMAP entry values</span>
-<span class="w">    </span><span class="n">objmap_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MESH_TRIANGLES</span><span class="p">;</span><span class="w"> </span><span class="c1">// primitive type</span>
-<span class="w">    </span><span class="n">objmap_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// start OBJMEM vertex index</span>
-<span class="w">    </span><span class="n">objmap_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// primitive count</span>
+<span class="w">    </span><span class="c1">// set entry values</span>
+<span class="w">    </span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MESH_TRIANGLES</span><span class="p">;</span>
+<span class="w">    </span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// starting OBJMEM vertex index</span>
+<span class="w">    </span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// primitive count</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1304,7 +1282,7 @@
 <span class="w">    </span><span class="n">pushMatrix</span><span class="p">();</span>
 <span class="w">        </span><span class="c1">// ... translate(), rotate(), and scale() as desired ...</span>
 
-<span class="w">        </span><span class="c1">// draw the mesh defined by our custom OBJMAP entry</span>
+<span class="w">        </span><span class="c1">// draw the mesh defined by OBJMAP entry 0</span>
 <span class="w">        </span><span class="n">drawObj</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="w">    </span><span class="n">popMatrix</span><span class="p">();</span>
 <span class="p">}</span>
@@ -1317,33 +1295,7 @@
 <p>Address range: <code>0x00F63854-0x00F65853</code></p>
 <p>Accessible using constant <code>MEMORY_WAVMAP</code>.</p>
 <p>Contains a table of 512 user-defined audio wave objects.</p>
-<p>Each entry in the <code>WAVMAP</code> consists of 4 32-bit <code>int</code> values, detailed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th><code>int</code> Index</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>Sample start index</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Sample end index (inclusive)</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Loop start index</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Loop end index (inclusive)</td>
-</tr>
-</tbody>
-</table>
+<p>Each entry in the <code>WAVMAP</code> is represented by a <a href="../era-c-overview/#waventry"><code>waventry</code></a> struct.</p>
 <p>Audio sample data is stored in <a href="#wavmem"><code>WAVMEM</code></a>, and is read by the soundchip when playing sounds.</p>
 <p>Sample start and sample end define the range of samples to play when a sound is triggered.</p>
 <p>Loop start and loop end define a sample range to loop when a sound is played using the Range looping mode.</p>
@@ -1376,13 +1328,13 @@ then playback jumps back to loop start.
 <span class="w">    </span><span class="c1">// when range looping is used we want to loop from 0x100 to 0x1FF</span>
 
 <span class="w">    </span><span class="c1">// get a pointer to the first WAVMAP entry (entry index 0)</span>
-<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">wavmap_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MEMORY_WAVMAP</span><span class="p">;</span>
+<span class="w">    </span><span class="n">waventry</span><span class="o">*</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getWavEntry</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// set WAVMAP entry values</span>
-<span class="w">    </span><span class="n">wavmap_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x000</span><span class="p">;</span><span class="w"> </span><span class="c1">// sample start</span>
-<span class="w">    </span><span class="n">wavmap_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1FF</span><span class="p">;</span><span class="w"> </span><span class="c1">// sample end</span>
-<span class="w">    </span><span class="n">wavmap_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x100</span><span class="p">;</span><span class="w"> </span><span class="c1">// loop start</span>
-<span class="w">    </span><span class="n">wavmap_ptr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1FF</span><span class="p">;</span><span class="w"> </span><span class="c1">// loop end</span>
+<span class="w">    </span><span class="c1">// set entry values</span>
+<span class="w">    </span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">sample_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x000</span><span class="p">;</span>
+<span class="w">    </span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">sample_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1FF</span><span class="p">;</span>
+<span class="w">    </span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">loop_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x100</span><span class="p">;</span>
+<span class="w">    </span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">loop_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1FF</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">delta_time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

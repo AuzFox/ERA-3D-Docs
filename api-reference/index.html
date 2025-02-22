@@ -2289,6 +2289,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getobjentry" class="md-nav__link">
+    <span class="md-ellipsis">
+      getObjEntry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwaventry" class="md-nav__link">
+    <span class="md-ellipsis">
+      getWavEntry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#initmemcard" class="md-nav__link">
     <span class="md-ellipsis">
       initMemCard
@@ -2554,6 +2572,11 @@
 <p>Access the console by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span>.</p>
 <p>The console command <code>api</code> will open a list of API functions, use the arrow keys to navigate and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to view a function's description.</p>
 <p>To quickly get the description of a specific function, run the console command <code>help &lt;function&gt;</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The API documentation accessed using the console is not currently up-to-date with the online version.</p>
+<p>For now, it is recommended to use this page instead.</p>
+</div>
 </div>
 <h2 id="function-catagories">Function Catagories<a class="headerlink" href="#function-catagories" title="Permanent link">&para;</a></h2>
 <p>API functions are organized into several catagories, click a catagory below or in the sidebar to jump to the related functions.</p>
@@ -5984,6 +6007,28 @@ This function always rounds toward negative infinity.</p>
 <p><strong>Description</strong>:</p>
 <p>Deallocates a <a href="../memory-map/#heap">heap</a> memory block if <strong>block</strong> points to a block previously allocated by <a href="#alloc"><code>alloc()</code></a>.</p>
 <p><code class="highlight"><span class="n">free</span><span class="p">(</span><span class="n">null</span><span class="p">)</span></code> does nothing.</p>
+</div>
+<h3 id="getobjentry"><code>getObjEntry</code><a class="headerlink" href="#getobjentry" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p><strong>Signature</strong>:</p>
+<p><code class="highlight"><span class="n">objentry</span><span class="o">*</span><span class="w"> </span><span class="n">getObjEntry</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span></code></p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">index</span></code>: Index of the entry to get a pointer to [0-511]</li>
+</ul>
+<p><strong>Description</strong>:</p>
+<p>Returns a pointer to the given <a href="../memory-map/#objmap"><code>OBJMAP</code></a> entry.</p>
+</div>
+<h3 id="getwaventry"><code>getWavEntry</code><a class="headerlink" href="#getwaventry" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p><strong>Signature</strong>:</p>
+<p><code class="highlight"><span class="n">waventry</span><span class="o">*</span><span class="w"> </span><span class="n">getWavEntry</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span></code></p>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><code class="highlight"><span class="kt">int</span><span class="w"> </span><span class="n">index</span></code>: Index of the entry to get a pointer to [0-511]</li>
+</ul>
+<p><strong>Description</strong>:</p>
+<p>Returns a pointer to the given <a href="../memory-map/#wavmap"><code>WAVMAP</code></a> entry.</p>
 </div>
 <h3 id="initmemcard"><code>initMemCard</code><a class="headerlink" href="#initmemcard" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
